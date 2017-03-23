@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Anonimato in rete - MAC Address</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href = "../index.html"> <span id = "sinistra"> Torna all'indice </span> </a> |
+				<a href="indirizziIP.html"> <span id = "destra"> Indirizzi IP </span> </a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#MacAddress">Mac Address</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#DeterminareMac">Determinare Mac</a></li>
+					<li><p class="menu2"><a href="#MacSpoofing">Mac Spoofing</a></li>
+				</ul>
+			</div>
+
+			<div id="contenuto">
+				<div>
+				<h1><a name="MacAddress">Mac address</a></h1>
+				<p class="paragrafo">
+					L'indirizzo MAC (Medial Access Control) &egrave; un codice a 48 bit
+					assegnato ad ogni scheda di rete 802.2.x. Il MAC address &egrave; composto
+					da 6 coppie con caratteri alfanumerici che vanno da 0 a 9 e da A a F
+					(esadecimale)
+				</p>
+				<p class="console">
+					ab:bc:cd:de:ef:f0 (Le prime 3 coppie indicano il produttore.)
+				</p>
+				</div>
+
+				<div>
+					<h2><a name="DeterminareMac">Determinare il MAC address</a></h2>
+						Per determinare il nostro MAC address bisogna aprire il terminale
+						e digitare "<font color = "#FF0000">ipconfig</font>"(Win) e "<font color = "#FF0000">ifconfig</font>" (UNIX-based)
+				</div>
+
+				<div>
+					<h3><a name="MacSpoofing">MAC Spoofing</a></h3>
+						Il camuffamento del MAC address viene chiamato "<i> MAC SPOOFING</i>",
+						&egrave; un operazione molto facile.
+
+						Come prima operazione bisogna definire quale interfaccia di rete viene utilizzata.<br>
+						Da un terminale bisogna lanciare il comando
+						<span class="console">$ ifconfig</span><br>
+						Sulla sinistra del terminale vedrete i nomi di due interfacce, <b>eth0</b> e <b>wlan0</b><br>
+						Una volta definita l'interfaccia di rete utilizzata, possiamo procedere a spoofare l'indirizzo.<br>
+
+						<br>
+						Per prima cosa si deve disattivare l'interfaccia di rete<br>
+						se l'interfaccia utilizzata &egrave; <b>eth0</b> il comanado sar&agrave; il seguente:
+						<p class="console"> $ ifconfig eth0 down </p>
+						altrimenti utilizzeremo il comando:
+						<p class="console"> $ ifconfig wlan0 down </p>
+						<br><br>
+
+						Adesso settiamo l'indirizzo falsato
+						<p class="console">
+							$ ifconfig eth0 hw ether ab:bc:cd:de:f0
+							<font color =  #00FF00> oppure </font>
+							$ ifconfig wlan0 hw ether ab:bc:cd:de:f0
+						</p>
+						<br><br>
+
+						Una volta cambiato l'inidirizzo procediamo ad attivare l'interfaccia di rete
+						<p class="console">$ ifconfig eth0 up <font color =  #00FF00> oppure </font> $ ifconfig wlan0 up</p>
+						<br><br><br>
+						In alternativa si pu&ograve; usare un tool di nome "<b>macchanger</b>",
+						con questo tool &egrave; possibile generare un indirizzo MAC random.
+
+
+						Ecco i commandi:
+						<p class="console">
+							<br/> $ ifconfig eth0 down <font color =  #00FF00> oppure </font> $ ifconfig wlan0 down<br/>
+							<br/> $ maccahnger -r eth0 <font color =  #00FF00> oppure </font> $ maccahnger -r wlan0 <br/>
+						</br> $ ifconfig eth0 up <font color =  #00FF00> oppure </font> $ ifconfig wlan0 up <br/>
+						</p>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href = "../index.html"> <span id = "sinistra"> Torna all'indice </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="indirizziIP.html"> <span id = "destra"> Indirizzi IP </span> </a>
+			</p>
+		</div>
+	</body>
+</html>

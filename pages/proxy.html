@@ -1,0 +1,253 @@
+<html>
+	<head>
+		<title>Anoninamato in rete - Proxy</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href = "indirizziIP.html"> <span id = "sinistra"> Indirizzi IP </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="sicurezzaDati.html"> <span id = "destra"> Sicurezza Dati </span> </a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#Proxy">Proxy</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#TipiDiProxies">Tipi di Proxies</a></p></li>
+						<ul>
+							<li><p class="menu3"><a href="#HTTPHTTPS">Proxy HTTP/HTTPS</a></p></li>
+							<li><p class="menu3"><a href="#Socks4">Proxy Socks4</a></p></li>
+							<li><p class="menu3"><a href="#Socks5">Proxy Socks5</a></p></li>
+							<li><p class="menu3"><a href="#WebProxy">Web Proxy</a></p></li>
+						</ul>
+					<li><p class="menu2"><a href="#DoveTrovarli">Dove trovarli</a></p></li>
+						<ul>
+							<li><p class="menu3"><a href="#ProxyScraper">Proxy Scraper</a></p></li>
+						</ul>
+					<li><p class="menu2"><a href="#UsareIProxies">Usare i Proxies</a></p></li>
+					 	<ul>
+							<li><p class="menu3"><a href="#UsoDiProgrammi">Durante l'uso di programmi</a></p></li>
+							<li><p class="menu3"><a href="#ProxyChains">Proxy Chains</a></p></li>
+							<li><p class="menu3"><a href="#ProxyCap">Proxy Cap</a></p></li>
+							<li><p class="menu3"><a href="#DuranteLaNavigazione">Durante la navigazione</a></p></li>
+							<li><p class="menu3"><a href="#VerifacareFunzionamento">Verificare Funzionamento</a></p></li>
+							<li><p class="menu3"><a href="#BlackList">BlackList</a></p></li>
+						</ul>
+					<li><p class="menu2"><a href="#Sicurezza">Sicurezza dei Proxy</a></p></li>
+				</ul>
+			</div>
+
+			<div id="contenuto">
+				<div>
+					<h1><big>Proxy</big></h1>
+					<p class = "paragrafo">
+						L'intento di un cybercriminale &egrave; quello di nascondere il proprio IP pubblico che non &egrave;
+						altro quello che lo rende riconoscibile in rete,mentre per il MAC address non si f&agrave; troppi problemi.
+					</p>
+
+					<p>
+						Il cybercriminale "esperto" quasi sicuramente non operer&agrave; MAI da casa, tantomeno usando qualche rete vicina,
+						poich&egrave; potrebbe essere ricollegato a qualche ipotetico reato, compresa la connessione a "scrocco" durante
+						l'attacco. Ed ecco che i PROXY ritornano utili.
+					</p>
+				</div>
+
+				<div>
+					<h3>Cos'&egrave; un proxy?</h3>
+					<p class = "paragrafo">I proxies sono essenzialmente server che svolgono diverse operazioni:</p>
+					<ul>
+						<li>FORNIRE NAVIGAZIONE ANONIMA,</li>
+						<li>EFFETTUARE LA COPIA DI PAGINE WEB E MEMORIZZARLE IN ESSO,</li>
+						<li>EFFETTUARE UN FILTERING A LIVELLO SOFTWARE, AGENDO COME FIREWALL.</li>
+					</ul>
+					<p class = "paragrafo">In sostanza i proxy si mettono tra il client e il server.</p>
+				</div>
+
+				<div>
+					<h3><a name="TipiDiProxy">Tipi di proxies</a></h3>
+					<h2><a name="HTTPHTTPS">Proxy HTTP/HTTPS</a></h2>
+						<p>Questi filtrano informazioni che navigano nel protocollo HTTP e nella sua forma criptata HTTPS.</p>
+						<ul>
+							<li>-HTTP(senza crittografia)</li>
+							<li>-HTTPS(con crittografia SSL/TLS)</li>
+						</ul>
+
+						<p class = "paragrafo">
+							I proxies HTTP sono piu popolari e facili da trovare in quanto i server gestiscono solo questo protocollo.
+							Rispetto ai SOCKS che sono pi&ugrave; reattivi ma limitati al loro protocollo.
+						</p>
+
+						<p>Ci sono 3 livelli di proxy:</p>
+						<ol>
+							<li>
+								PROXY NON ANONIMI: non camuffano l'IP originario e aggiungono solitamente una sola stringa agli
+								header (informazioni inviate hai pacchetti) al server che lo riceve.
+							</li>
+							<li>PROXY ANONIMI: camuffano l'indirizzo IP ma alteranno gli header al server che lo riceve.</li>
+							<li>PROXY ELITE: camuffano l'IP e non alteranno gli header.</li>
+						</ol>
+					</div>
+					<div>
+						<h3><a name="Socks4">Proxy SOCKS4</a></h3>
+						<p>
+							Il vantaggio di utillizare un proxy con supporto al protocollo SOCKS4 anzich&eacute; HTTP/HTTPS &egrave;
+							il poter reindirizzare qualunque protocollo a base TCP. Questo vuol dire che non filtri solo i servizi
+							HTTP/HTTPS(che di natura sono TCP) ma l'intera gamma di protocolli. La sua variante &egrave; la SOCKS4a.
+						</p>
+					</div>
+
+					<h3><a name="Socks5">Proxy SOCKS5</a></h3>
+					<p>
+						Sostanzialmente identico al precedente, riesce a reindirizzare le info sul protocollo UDP, rendendo il tutto
+						pi&ugrave; sicuro. Il protocollo SOCKS5 ha permesso di proprietario e di abilitare un sistema di autenticazione
+						interno al supporto IPV6.
+					</p>
+
+					<p>
+						Questo permette di utillizare i proxy SOCKS5 con tutti i software, utilliza la connessione ad internet
+						(posta,chat,p2p etc...).
+					</p>
+				</div>
+				<div>
+					<h3><a name="WebProxy">Web Proxy(oggi proxy)</a></h3>
+					<p>
+						Questi sono dei veri siti web che non necessitano configurazione o tool particolari:
+					</p>
+
+					<ul>
+						<li><a href="whoer.net">whoer.net</a></li>
+						<li><a href="hide.me">hide.me</a></li>
+						<li><a href="proxysite.com">proxysite.com</a></li>
+						<li><a href="VPNbook.com">VPNbook.com</a></li>
+						<li><a href="hidemyass.com">hidemyass.com</a></li>
+						<li><a href="Kprxoy.com">Kprxoy.com</a></li>
+						<li><a href="hidester.com">hidester.com</a></li>
+						<li><a href="filterbypass.me">filterbypass.me</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a name="DoveTrovarli">Dove trovarli?</a></h3>
+					<p>I siti pi&ugrave; attivi per recupere i proxy sono:</p>
+					<ul>
+						<li>Hidemyass(Proxy list)-HTTP/HTTPS/SOCKS</li>
+						<li>Proxy4free -HTTP/HTTPS</p>
+						<li>Samair.ru -HTTP/HTTPS/SOCKS</li>
+						<li>InCloack(Proxy list) -HTTP/HTTPS/SOCKS</li>
+						<li>CoolProxy -HTTP</p>
+						<li>GatherProxy -HTTP/SOCKS</li>
+						<li>SSL Proxies -HTTP/HTTPS/SOCKS</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3><a name="ProxyScraper">Tramite Proxy Scraper</a></h3>
+					<p class = "paragrafo">
+						I proxy scraper sono dei software pensati per effettuare lo scraping-raccolta dati sul web-dei
+						proxy in modo che si ottengano pi&ugrave; velocemente e senza sforzo le proxy list. Queste sono alucne:
+					</p>
+					<ul>
+						<li>Net Ghost,</li>
+						<li>Gheter Proxy Scraper,</li>
+						<li>Procy Harverster,</li>
+						<li>Holy SEO Proxy6 Scraper.</li>
+					</ul>
+				</div>
+
+				<div>
+					<h2><a name="UsareIProxy">Come usare i Proxies</a></h2>
+					<p><b>In tutti i sistemi operativi</b></p>
+						Windows---->Pennello di ontrollo---->Opzioni Internet---->Connessioni---->Impostazioni LAN---->Server Proxy <br><br>
+						Linux---->Computer---->Preferenze Desktop---->Network Proxy(GNOME 2)<br><br>
+						/////---->Computer---->Preferenza Desktop---->Network Setting(GNOME 3)<br><br>
+						OSX e MACOS---->Sistema---->Network---->Avanzate---->Proxy<br><br>
+					</p>
+				</div>
+
+				<div>
+					<h3><a name="UsoDiProgrammi">Durante l'uso di programmi</a></h3>
+					<p>Alcuni software tipo quelli di sharing danno la possibilit&agrave; di fare uso di proxy interni.</p>
+				</div>
+
+				<div>
+					<h3><a name="ProxyChains">Proxychains</a></h3>
+					<p class = "paragrafo">
+						Uno dei migliori tool per dare la possibilit&agrave; a tutti i programmi di collegarsi a server esterni
+						&egrave; di sicuro PROXYCHAINS. Il vantaggio di questo tool &egrave; che garantisce al programma e alle sue dipendenze
+						comunichino tramite protocolli SOCKS4, SOCKS5, HTTP. Proxychains &egrave; unicamente disponibile in ambiente Linux.
+					</p>
+
+					<p>Il suo funzionamento &egrave; molto semplice:</p>
+					<p class = "console"> $ proxychains ssh nick@indirizzo</p>
+					<p>Nel comando precedente abbiamno forzato il programma SSH ad utilizzare proxychains.</p>
+				</div>
+
+				<div>
+					<h3><a name="ProxyCap">Proxycap</a></h3>
+					<p>
+						&Egrave; la sua pi&ugrave; famosa controparte nel mondo Win/Mac. Disponibile da terminale e anche in versione GUI
+						(a pagamento).
+					</p>
+				</div>
+
+				<div>
+					<h3><a name="DuranteLaNavigazione">Durante la navigazione web</a></h3>
+					<p align="center" >
+						Google Chrome---->Mostra Impostazioni Avanzate---->Modifica Impostazioni Proxy----><br><br>
+						Mozilla Firefox---->Impostazioni---->Avanzate---->Rete---->Connessioni---->Impostazioni---->Configurazione
+						Manuale Proxy<br><br>
+						Opera---->Cerca nella bara "Proxy"
+					</p>
+				</div>
+				<div>
+
+					<h3><a name="VerificareFunzionamento">Verificare il loro funzionamento</a></h3>
+					<p>
+						Esistono 2 modi per controllare il funzionamento di un proxy:<br>
+					    -Digitare su internet What's my IP address (link)<br>
+					    -O quello di utillizare il programma wget:
+					</p>
+
+					<p class = "console"><br/> wget https://ipinfo.io/ip -qO-</p>
+				</div>
+
+				<div>
+					<h3><a name="BlackList">Attenzione alle Blacklist</a></h3>
+					<p>
+						Pu&ograve; capitare molto spesso che i proxies finiscano all'interno di blacklist, ovvero una lista di indirizzi IP
+						utilizzati per scopi illegali.
+					</p>
+				</div>
+
+				<div>
+					<h3><a name="Sicurezza">Sono sicuri i proxies?</a></h3>
+					<p>
+						<b>La risposta &egrave; no.</b></br>
+						I proxies sono server gestiti da servizi esterni che offrono, per vari motivi, il mantenimento di un server.
+						Questo signifa che tuto ci&ograve; &egrave; gestito da terze parti. A volte possiamo trovarci
+						davanti ad associazioni che combattono la censura oppure proxy universitari, ma possiamo avere di fronte aziende
+						che lucrano	sulla nostra navigazione o nei peggiori dei casi a degli HONEYPOT, essi sono gestiti da NSA o FBI
+						per monitorare il traffico.<br>
+						Senza contare che i proxy server memorizzano tutto: (siti navigati, login, operazioni effettuate) e tutte le info
+						in rete	(indirizzo IP, browser, OS.). Ci&ograve; non significa che l'IP Spoofing brama contro: anzi la sua
+						popolarit&agrave; ha permesso di definire nuovi modi d'uso come bruteforce/bot/stresser.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="footer">
+			<p class="console">
+				<a href = "indirizziIP.html"> <span id = "sinistra"> Indirizzi IP </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="sicurezzaDati.html"> <span id = "destra"> Sicurezza Dati </span> </a>
+			</p>
+		</div>
+
+	</body>
+</html>

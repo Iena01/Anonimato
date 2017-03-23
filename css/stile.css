@@ -1,0 +1,78 @@
+body
+{
+    font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+    background-color: #000000;
+    color: #00FF00;
+}
+
+h1, h2, h3, h4
+{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+a:link, a:visited
+{
+    color: #00FF00;
+}
+
+ a:hover
+{
+    color: #006400;
+}
+
+#sinistra:hover
+{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#centro:hover
+{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#destra:hover
+{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.console
+{
+    text-align: center;
+    color: #FF0000;
+}
+
+.paragrafo
+{
+    font-style: italic;
+}
+
+#footer
+{
+    background-color: #00FF00;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+#sinistra
+{
+    position: absolute;
+    left: 60px;
+    color: #000000;
+}
+
+#centro
+{
+    margin: auto 0;
+    color: #000000;
+}
+
+#destra
+{
+    position: absolute;
+    right: 60px;
+    color: #000000;
+}

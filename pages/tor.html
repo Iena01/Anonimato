@@ -1,0 +1,323 @@
+<html>
+	<head>
+		<title>Anonimato in rete - TOR</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="dns.html"><span id = "sinistra"> DNS </span></a> |
+				<a href = "../index.html"> <span id = "centro">Torna all'indice </span> </a> |
+				<a href="i2p.html"><span id = "destra"> I2P </span></a>
+			</p>
+		</div>
+		<div id="indice">
+			<p class="menu1"><a href="#Tor">TOR Project</a></p>
+	     	<ul>
+		 		<li><p class="menu2"><a href="#CosaElaretetor">Cosa &egrave; la rete Tor</a></p></li>
+		   		<li><p class="menu2"><a href="#torreplay">I TOR relay</a></p></li>
+		 		<li><p class="menu2"><a href="#ItorBridges">I TOR Bridges</a></p></li>
+				<ul>
+					<li><p class="menu3"><a href="#Usoavanzato">Uso avanzato dei Bridges</a></p></li>
+				</ul>
+				<li><p class="menu2"><a href="#IPluggableTransportable">I Pluggable Transportable</a></p></li>
+				<ul>
+			 		<li><p class="menu3"><a href="#Obfs2">Obfs2</a></p></li>
+			 		<li><p class="menu3"><a href="#Obfs3">Obfs3</a></p></li>
+		 			<li><p class="menu3"><a href="#Obfs4">Obfs4</a></p></li>
+		 		</ul>
+				<li><p class="menu2"><a href="#Considerazioni">Considerazioni di questi ultimi</a></p></li>
+				<li><p class="menu2"><a href="#Protocolli">Protocolli Meek e ScrambleSuite.</a></p></li>
+		 		<ul>
+		  			<li><p class="menu3"><a href="#Meek">Meek</a></p></li>
+					<li><p class="menu3"><a href="#ScrambleSuite">ScrambleSuite</a></p></li>
+				</ul>
+				<li><p class="menu3"><a href="#Usi">Gli usi di tor</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#Browser">TOR come Browser</a></p></li>
+						<li><p class="menu3"><a href="#P2p">Tor come P2P</a></p></li>
+						<li><p class="menu3"><a href="#Chat">Tor come chat</a></p></li>
+						<li><p class="menu3"><a href="#Proxy">TOR come Proxy Software</a></p></li>
+					</ul>
+				<li><p class="menu2"><a href="#Test">Test Tor via Browser</a></p></li>
+				<li><p class="menu2"><a href="#DeepWeb">TOR e il Deep Web</a></p></li>
+				<li><p class="menu2"><a href="#TOResicura">La rete Tor &egrave; davvero sicura?</a></p></li>
+				<li><p class="menu2"><a href="#HTTP">Tor e il protocollo HTTP</a></p></li>
+				<li><p class="menu2"><a href="#Exitnode">Tor e gli exit node</a></p></li>
+				<li><p class="menu2"><a href="#Problemi">Tor Browser, i problemi del precotto</a></p></li>
+			</ul>
+		</div>
+
+			<h1><a name="Tor">Tor Project</a></h1>
+
+			<div id="contenuto">
+				<h3><a name="CosaElaretetor">Cosa &egrave; la rete Tor</a></h3>
+				<p class = "paragrafo">
+					Tor &egrave; una rete anonima che &egrave; stata ideata per consentire la navigazione sicura protengendo la
+					privacy degli utenti.<br>
+					Il logo della cipolla &egrave; esattamente il processo che esegue Tor per prottegerti.<br>
+					Questa &egrave; compostta da:
+				</p>
+
+				<ul>
+					<li><b>Client</b>: gli utenti.</li>
+					<li><b>Middleman</b>: I server che effettuano il rimbalzo.</li>
+					<li><b>Exit router</b>: Il server finale che si occupa di uscire da internet.</li>
+					<li><b>Bridge router</b>: Stessa funzione di exit router con l'eccezione di bypassare Tor.</li>
+				</ul>
+
+				<p>Per facilitare il tutto, Tor project ha creato diverse soluzioni:</p>
+				<ul>
+					<li><b>Tor Browser</b>: un paccheto che contiene Firefox(moddato), il plugin HTTPS Everywhere(connessioni SSL),
+						il plugin NoScript(blocca JavaScript) e il client Tor.</li>
+					<li><b>Orbot</b>: un client che permette di collegarsi alla rete Tor e prottegere  il traffico sui dispositivi Android.</li>
+					<li><b>Tails</b>: distribuzione Linux pensata all'anonimato fornita inoltre di tools per non lasciare tracce.</li>
+					<li><b>Arm</b>: tool da terminale per monitorare e configurare il tutto.</li>
+					<li><b>Atlas</b>: uno strumento via web che consente di controllare lo stato di relay di Tor.</li>
+					<li><b>Pluggable</b>: software di terzi che supportano l'anonimato.</li>
+					<li><b>Stem</b>: libreria python che consente di interfacciarsi con Tor.</li>
+					<li><b>Ooni</b>: software per verificare possibili monitoraggi dai governi.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h2><a name="torreplay">I Tor Relay</a></h2>
+				<p class = "paragrafo">
+					Nell'universo Tor i Relay, si occupano di regalare banda.<br>
+					Tor consiglia l'uso se si usano 250 kb/s in upload di download.
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="ItorBridges">I Tor Bridges</a></h2>
+				<p class = "paragrafo">
+					I Bridges di Tor sono nodi di Tor che permettono di bypassare il filtraggio da parte degli ISP e siti web.<br>
+					Per fare in modo che tutto funzioni al meglio non esistono liste complete poich&eacute; gli ISP e honeypot li
+					riconoscerebbero e provvederebbero al blocco.
+				</p>
+			</div>
+			<div>
+				<h3><a name="Usoavanzato">Uso avanzato dei Bridges</a></h3>
+				<p class = "paragrafo">Nel caso si volesse impostare i propri Bridges (Tor expert Bundle o Tor Browser), bisogna
+					compilare l'impossibile CAPTCHA e ottenere cosi un valore
+				</p>
+			</div>
+			<div>
+				<h2><a name="IPluggableTransportable">I Pluggable Transportable</a></h2>
+				<p>
+					Da considerare che anche i bridges possono essere introdotti all'interno di blacklist.<br>
+					Per raggirare ci&ograve; Tor ha introdotto una nuova funzionalit&agrave; "Pluggable Transports". <br>
+					I Pluggable Transports hanno il cpmpito di "pulire" il traffico di Tor tra il client e
+					il bridge il quale potrebbe essere intercettato (DPI) e bloccato.<br>
+					I Pluggable Transports pi&ugrave; comuni sono definiti "Bridge Offuscati", questi offuscano il traffico ricorrendo
+					ad un algoritmo che mischia i pacchetti di entrata e di uscita.<br>
+					Questi sono 3 Pluggable Transports:
+				</p>
+				<ol>
+					<li>Obfs2</li>
+					<li>Obfs3</li>
+					<li>Obfs4</li>
+				</ol>
+
+				<p>
+					<font color=#FFFFFF><b><a name="Obfs2">Obfs2</a></b></font>
+					&egrave; il pi&ugrave; semplice riordina casualmente i pacchetti. <br>
+					Gli studi dimostrano che questo protocollo pu&ograve; essere craccato catturando l'handshake (un po' come nelle WEP).
+					infastti Obfs2 non &egrave; stato deprecato.<br><br>
+
+					<font color=#FFFFFF><b><a name="Obfs3">Obfs3</a></b></font>
+					&egrave; simile al protocollo precedente ma utilizza il metodo Diffie Hellman per lo scambio di chiavi
+					in fase di Handshake. <br><br>
+
+					<font color=#FFFFFF><b><a name="Obfs4">Obfs4</a></b></font>
+					&egrave; la quarta versione di questo protocollo ed &egrave; piu vicono a Scramble Suite.
+					<br>Questa versione sembra la piu sicura, eccetto per bug di svilluppo.
+				</p>
+			</div>
+			<div>
+				<h3><a name="Considerazioni">Considerazioni di questi ultimi</a></h3>
+				<p>
+					Questi protocolli come detto sono nuovi hanno quindi biosgno di "rodaggio" prima di essere definiti sicuri anche
+					all'99,9%.
+				</p>
+			</div>
+			<div>
+				<h2><a name="Protocolli">Protocolli Meek e ScrambleSuite</a></h2>
+				<p>Tor &egrave; in grado di comunicare anche con altri protocolli oltre agli Obfs tra cui:</p>
+				<div>
+					<h3><a name="Meek">Meek</a></h3>
+					<p class = "paragrafo">
+						I protocolli Meek permettono di effetuare un tennelling in un cicrcuito HTTPS. <br>
+						Utlizzando una tecnica chiamata "Domain Frontig" per nascondere la cominicazione all'ISP.<br>
+						Imparte hai Meek vengono inseriti AMAZON,AZURE,GOOGLE per "fregare" gli ISP: Tor aggiunge che i Meek sono
+						piu lenti degli Obfs e andrebbero utillizati solo se gli ISP bloccano gli ultimi.
+					</p>
+				</div>
+				<div>
+					<h3><a name="ScrambleSuit">Scramble Suit</a></h3>
+					<p class = "paragrafo">Il progetto Scramble Suite nasce per risolvere 2 problemi:</p>
+					<ol>
+						<li>
+							Proteggere gli attacchi di monitoraggio richiedendo un "segreto" condiviso tra il client e il server sfruttando
+							out-of-band tramite BridgeDB(servizio bridge Tor).
+						</il>
+						<li>
+							Proteggere gli attacchi alternando flussi di dati.
+						</li>
+					</ol>
+					<p>Scramble Suit supporta i protocolli SOCKS,quindi i vari HTTO,SMTP,SSH.</p>
+				</div>
+			</div>
+			<div>
+				<h2><a name="Usi">Gli usi di Tor</a></h2>
+				<p class = "paragrafo">Tor puo essere usato in diversi modi. Vediamo quali:</p>
+				<div>
+					<h3><a name="Browser">Tor come Browser</a></h3>
+					<p class = "paragrafo">
+						Tor Browser Bundle &egrave; forse il progetto più famoso di Tor.<br>
+						E basato su Firefox ESR preconfigurato a collegarsi al proxy-server SOCKS con IP 127.0.0.1:9150, viene usato
+						con:
+					</p>
+					<ul>
+						<li><b>TorLauncher</b> per collegarsi alla rete Tor in modalit&agrave; "fantasma".</li>
+						<li><b>TorButton</b> permette di controllare le identit&agrave; e impostazioni del client Tor.</li>
+						<li><b>NoScript</b> previene l'esecuzione di JavaScript.</li>
+						<li><b>HTTPSEverywhere</b> forza la connessione web tramite protocollo HTTPS.</li>
+					</ul>
+					<p class = "paragrafo">
+						Il client &egrave; disponibile per tutte le piattaforme ed &egrave; possibile scaricarlo 3 versioni:
+					</p>
+					<ul>
+						<li><b>STABLE</b>, versione stabile.</li>
+						<li></b>EXPERIMENTAL</b>, versione pi&ugrave; aggiornata ma meno stabile.</li>
+						<li></b>HARDENED</b>, versione alpha disponibile solo per Linux X64.</li>
+					</ul>
+
+					<p>Tor inoltre pu&ograve; essere usato per la navigazione sia nella Clearnet che nel DeepWeb.</p>
+				</div>
+				<div>
+					<h3><a name="P2p">Tor come P2P</a></h3>
+					<p>Il Project Tor sconsiglia la condivisione P2P per 2 motivi:</p>
+					<ol>
+						<li>La rete Tor non ha la capacit&agrave; di supportare app di alto volume. <bR>
+							Se tutti i "Tor-nauti" usassero Tor	per il P2P, la rete Tor si saturerebbe.
+						</li>
+						<li>
+							La rete Torrent potrebbe "tradirti" poich&eacute; Torrent e altre app potrebbero rivellare il tuo IP per metterti
+							in cominicazione col tracker e quindi coi peer
+						</li>
+					</ol>
+				</div>
+				<div>
+					<h3><a name="Chat">Tor come Chat</a></h3>
+					<p>
+						La comunicazione in internet pu&ograve; essere monitorata anche per pi&ugrave; di 5 anni.<br>
+						Introduciamo quindi TORCHAT. Questo &egrave; un software di comunicazione che gira su rete Tor che comunica con il
+						meta-protocollo .onion.TORCHAT ha il pregio di essere disponibile su molte piattaforme.
+					</p>
+				</div>
+			</div>
+
+			<div>
+				<h4>Come funziona?</h4>
+				<p>
+				<b>TORCHAT</b> crea al primo avvio un ID univoco alfanumerico che verr&agrave; trasmesso solo a chi vuole messagiare con
+				te.
+				</p>
+			</div>
+			<div>
+				<h3><a name="Proxy">Tor come Proxy Software</a></h3>
+					<p>
+						Come per i proxy &egrave; necessario configurare i propri tool affinch&eacute; operino nella rete Tor.<br>
+						Dal momento che &egrave; attivo un SOCKS5 sul proprio PC. LOCALHOST 127.0.0.1 e PORTA 9150.
+					</p>
+			</div>
+			<div>
+				<h3><a name="Test">Test Tor via Browser</a></h3>
+				<p>Andiamo al sito Tor Check. Esso dar&agrave; come output le seguenti voci:</p>
+				<ul>
+					<li><b>Your real IP</b>: Il tuo indirizzo IP. Se viene mostrato la sicurezza pu&ograve; saltare.</li>
+					<li><b>Your current IP</b>: viene visualizzato un IP estraneo(exit node).</li>
+					<li><b>
+						Your current FQDN</b>: si riferisce al nome del dominio che specifica i DNS. questo mostrer&agrave; che l'IP &egrave;
+						ancora loggato dall'ISP.
+					</li>
+					<li><b>
+						Your geolocation</b>: viene identificata la posizione geografica risalndo all'IP.
+						Questa non &egrave; la tua poszione fisica ma del tuo ISP.
+					</li>
+					<li><b>
+						TorDNSEL</b>: qui si verifica se l'indirizzo IP che "esce" fa parte di exit node. Ci permette di sapere se
+						la nostra connessione non &egrave; stata manipolata.
+					</li>
+					<li><b>Local Tor Consensus</b>: qui si verifica se l'HOST ha accettato Tor.</li>
+					<li><b>Your HTTP-referer</b>: qui si pu&ograve; verificare se lasciamo tracce in rete.</li>
+					<li><b>
+						Your HTTP-via</b>: qui viene mostrato il valore che informa il server e che tipo di richiesta viene effettuata
+						tramite proxy.
+					</li>
+					<li><b>Your HTTP-User-Agent</b>: viene mostrato il browser e l'O.S. in uso.</li>
+					<li><b>Your HTTP-ACCEPT</b>: qui vengoni mostrato i valori che il tuo Browser accetta.</li>
+					<li><b>Your HTTP-CONNECTION</b>: qui viene segnalato il valore della connessione del Browser. Di solito &egrave; Keep-alive.</li>
+				</ul>
+			</div>
+			<div>
+				<h3><a name="DeepWeb">Tor e il Deep Web</a></h3>
+				<p>
+					Tor &egrave; il browser pi&ugrave; famoso per accedere al Deep Web.<br>
+					Senza sarebbe impossibile accedere al dominio .onion.
+				</p>
+			</div>
+			<div>
+				<h4>Dove si trovano i siti .onion.</h4>
+				<p>Il primo passo e accedere ad Hidden Wiki che raccoglie siti .onion.</p>
+			</div>
+			<div>
+				<h2><a name="TOResicura">La rete Tor &egrave; davvero sicura?</a></h2>
+				<p>
+					Tor non &egrave; sicuro al 100% poich&eacute; &egrave; un software e come tale &egrave; stato progettato da esseri umani. <br>
+					Quindi Tor se usato bene pu&ograve; dare vantaggi ma &egrave; neccessario sepere dove mettere le mani.
+				</p>
+			</div>
+			<div>
+				<h2><a name="HTTP">Tor e il protocollo HTTP</a></h2>
+				<p>
+					Come gi&agrae; detto Tor &egrave; implementato da HTTPSEverywhere che obbliga le connessioni
+					HTTPS (HTTP+protocollo SSL/TLS)
+				</p>
+			</div>
+			<div>
+				<h4>Perch&eacute; poi?</h4>
+				<p>
+					Semplicemente perch&eacute; Tor &egrave; solo un router di traffico e non &egrave; un tool di criptazione.<br>
+					Il compito di Tor &egrave; quello di criptare le info per garantire anonimato. <br>
+					Il processo viene effettuato dal protocollo HTTPS (sempre se supportato).
+				</p>
+			</div>
+			<div>
+				<h2><a name="Exitnode">Tor e gli exit node</a></h2>
+				<p>
+					Uno dei rischi &egrave; quello di aver un exit node compromesso cio&egrave; non criptato questo per&ograve; non
+					permette di risalire direttamente (per la struttura a cipolla) a te, per&ograve; dato che l'ultimo emette info in chiaro
+					rende visibile tutte le info che digiti.<br>
+					Gli exit node possono reindirizzare a siti bot per rubarti credenziali.
+				</p>
+			</div>
+			<div>
+				<h4><a name="Problemi">Tor Browser, i problemi del precotto...</a></h4>
+				<p>
+					Il problema nell'utilizzare il Tor Browser Bundle &egrave; causato da lui stesso.<br>
+					Consiglio una configurazione manuale per evitare possibile falle.
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href="dns.html"><span id = "sinistra"> DNS </span></a> |
+				<a href = "../index.html"> <span id = "centro">Torna all'indice </span> </a> |
+				<a href="i2p.html"><span id = "destra"> I2P </span></a>
+			</p>
+		</div>
+	</body>
+</html>

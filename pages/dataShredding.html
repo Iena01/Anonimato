@@ -1,0 +1,354 @@
+<html>
+	<head>
+		<title>Anonimato in rete - Data Shredding</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href = "pgp.html"> <span id = "sinistra" > PGP </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a>
+				<a href = "backUp.html" <span id = "destra"> Back-Up dei dati</span></p></a>
+			</p>
+  		</div>
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#DataShredding">Data Shredding</a>
+				<ul>
+					<li><p class="menu2"><a href="#EffettuareIlDataShredding">Effettuare il Data Shredding</a></p></li>
+					<li><p class="menu2"><a href="#DiskCleaner">Disk Cleaner</a></p></li>
+					<li><p class="menu2"><a href="#FileShredding">File Shredding</a></p></li>
+					<li><p class="menu2"><a href="#EffettuareFileShredding">Effettuare il File Shredding</a></p></li>
+					<li><p class="menu2"><a href="#Wipe">Utilizzare Wipe</a></p></li>
+					<li><p class="menu2"><a href="#ShredLinux">Shred su Linux</a></p></li>
+					<li><p class="menu2"><a href="#DBAN">DBAN per lo standalone</a></p></li>
+					<li><p class="menu2"><a href="#UsareDBAN">Come usare DBAN</a></p></li>
+					<li><p class="menu2"><a href="#FileShreddingSSD">File Shredding e SSD</a></p></li>
+					<li><p class="menu2"><a href="#DistruzioneFisica">Distruzion fisica del drive</a></p></li>
+					<li><p class="menu2"><a href="#DistruzineMeccanica">Distruzione meccanica</a></p></li>
+					<li><p class="menu2"><a href="#Segmentazione">Segmentazione</a></p></li>
+					<li><p class="menu2"><a href="#Incenerimento">Incenerimento</a></p></li>
+					<li><p class="menu2"><a href="#Affogamento">Affogamento</a></p></li>
+					<li><p class="menu2"><a href="#Corrosione">Corrosione Chimica</a></p></li>
+			</div>
+
+			<div id="contenuto">
+				<h1><a name="DataShredding">Data Shredding</a></h1>
+				<p class="paragrafo">
+					Arriver&agrave; il giorno che il nostro file criptato/decriptato non servir&agrave; piu a nulla.<br>
+					Quando arriver&agrave; quel giorno non lasciate che il file venga cestinato: il file rimar&agrave; sempre li,
+					o quantomeno lascer&agrave; tracce della sua presenza e sar&agrave;	possibile recuperarlo.
+				</p>
+				<p>
+					In questo capitolo ci occuperemo di tutti quei metodi per distruggere ogni prova presente nel nostro computer e
+					in partcolare sulla memoria ROM.
+				</p>
+				<div>
+					<h2><a name="EffettuareIlDataShredding">Come effettuare il Data Shredding</a></h2>
+					<p class="paragrafo">
+						Quando si &egrave; scoperto che era possibile recuperare file cancellati sul PC sono spuntati come funghi decine
+						di software.<br><br>
+						Al momento possiamo suddividere i tool in tre grandi categorie:
+					</p>
+					<ul>
+						<li>Disk cleaner</li>
+						<li>File Wipers</li>
+						<li>Distruzione fisica del drive</li>
+					</ul>
+				</div>
+				<div>
+					<h2><a name="DiskCleaner">Disk Cleaner</a></h2>
+					<p class="paragrafo">
+						In questa categoria rientrano quei software che utilizzano vari metodi per effettuare la sanificazione del Hard Disk.<br>
+						In sostanza si occupano di liberare quei settori che contengono ancora dati fantasma e che verrano utilizzati solo quando
+						non ci sar&agrave; pi&ugrave; spazio sul Hard Disk.<br>
+
+						L'affidabilit&agrave; di questi software tuttavia &egrave; messa indiscussione per le tecniche di lavoro talvolta troppo blande col
+						fine di vincere le "gare dei benchmark in velocita", inoltre molti di questi software lasciano tracce all'interno dei log
+						proprietari o del O.S stesso.
+					</p>
+					<p>Per qusto non ci fermiamo molto sopra a questo argomento poich&eacute; farebbe saltare tutto l'anonimato.</p>
+				</div>
+				<div>
+					<h2><a name="FileShredding">File Shredding</a></h2>
+					<p class="paragrafo">
+						Il file shredding &egrave; una pratica che fa fronte a questa situazione: il suo funzionamento si basa sul riscrivere nella
+						posizione in memoria precedentemente allocata dal file pre-esistente con byte random.<br>
+						Pi&ugrave; volte si riscriver&agrave; su quella poszione maggiori saranno le probabilit&agrave; che il file scompaia per sempre.<br>
+						Ci sono molti punti punti di vista sul numero di sovrascrizioni da eseguire per una corretta eliminazione esempio: la NSA ne raccomanda
+						3, il Dipartimento della Difesa 7 e Peter Gutmann (inventore <a href="https://it.wikipedia.org">metodo Gutmann</a>)
+						nel suo schema ne dimostra 35.<br>
+						Ognuno fa le sue valutazioni, certo che pero 35 sembra un numero esagerato, in realt&agrave; potrebbero bastare circa 5-6 volte.
+						Giusto per essere chiari Gutmann non risulta essere pi&ugrave; valido poich&eacute; i suoi studi si
+						basano su vecchi pattern utilizzati negli Hard Disk IDE di fine anni '90<br>
+						Consideriamo poi che dal 2001 molti produttori si sono interessati al Data Shredding tanto da standardizzare i loro
+						prodotti con una tecnologia chiamata<a href="https://en.wikipedia.org">ATA Secure Erase</a>.
+					</p>
+				</div>
+				<div>
+					<h2><a name="EffettuareFileShredding">Come effettuare il File Shredding</a></h2>
+					<p class="paragrafo">Il File Shredding non risulta essere difficile, &egrave; possibile trovare moltisssimi tools
+						per qualsiasi O.S. purtroppo per&ograve; (a parte <a href="https://www.bleachbit.org">BleachBit</a>)
+						nessuno &egrave; multi-forma, quindi li suddivederemo per O.S:
+					</p>
+					<ul>
+						<li>
+							<a href="https://www.piriform.com">CCleaner</a> ha una funzionalit&agrave; di Drive Wiping per liberare spazio
+							occupati da file eliminati (Win);
+						</li>
+						<li>
+							sempre su Win ne esistono un'infinit&agrave; dedicati al File Shredding: <a href="https://sourceforge.net">Eraser</a>,
+							<a href="https://www.freewarefiles.com">Securely File Shredder</a>, <a href="https://www.codyssey.com">Freeraser</a>,
+							<a href="https://www.gajin.at">WipeFile</a>, <a href="https://www.ascomp.de">Secure Eraser</a> e molti altri;
+						</li>
+						<li>
+							Su Mac OS/OSX il pi&ugrave; affidabile sembra essere <a href="www.gajin.at">Permanent Eraser</a>;
+						</li>
+						<li>
+							Su GNU/Linux il tool che consiglierei &egrave; <a href="linux.die.net">shred</a>, su Tails &egrave; presente
+							<a href="https://tails.boum.org">Nautilus Wiper</a>
+						</li>
+						<li>
+							<a href="https://www.dban.org">DBAN</a>(per la formattazione intera di una partizione SENZA l'uso di O.S)
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h2><a name="Wipe">Utillizo di Wipe su GNU/Linux</a></h2>
+					<p>
+						Tenendo in considerazione che la nsotra si sempre la situazione di Tails procederemo al wipe di un file utilizando i tool gia
+						presenti in esso:
+					</p>
+					<img src="../images/ww.png"/>
+					<p>Se invece ci troviamo in un'altro ambiente Linux basta installarlo col commando:</p>
+					<p class="console"><br/> $ sudo apt-get nautlius-wipe
+				</div>
+				<div>
+					<h2><a name="ShredLinux">Shred su Linux</a></h2>
+					<p >
+						Nel caso si voglia shreddare un'intera partizione si pu&ograve; sempre usare shred, un tool dalla cara e vecchira riga
+						di commando.<br>
+						Procediamo con l'installazione:
+					</p>
+					<p class="console"><br/> $ sudo apt-get install shred</p>
+					<p class="paragrafo">Questo programma &egrave; installato nella maggior parte delle distribuzioni Ubuntu-based.</p>
+					<p>Otteniamo la lista delle nostre partizioni attive, con il seguente commando:</p>
+					<p class="console"><br/> # fdisk -l</p>
+
+					<p class="paragrafo">
+						Cosi siamo sicuri di formattare la partizione corretta (ipotizziamo /dev/sdb).<br>
+						&Egrave; il momento di ripulire la partizione, se il tempo non &egrave; un nostro alleato potremmo utillizare una
+						cancellazione veloce. Questa procedura risulta pi&ugrave; veloce poich&eacute; su ogni settore scrive un volre vuoto:
+					</p>
+				    <p class="console"><br/> $ shred -vzn 0 /dev/sdb </p>
+					<p>Nel nostro caso -vzn dir&agrave; a shred:</p>
+					<ul>
+						<li>V, mostrami i progressi</li>
+						<li>Z, sovrascrivi l'ultimo3></font>li>
+					</ul>
+					<p>
+						Se invece volessimo essere pi&ugrave; sicuri dei risultati possiamo sempre manipolare il tool affinch&eacute; compia azioni
+						pi&ugrave; sofisticate.<br>
+						Lanciando ad esempio:
+					</p>
+					<p class="console"><br/> $ shred -vzn 3 /dev/sdb</p>
+
+					<p>
+						Diremo al programma le stesse cose, ad eccezione che le interazioni in questo caso saranno 3 e quindi
+						un eliminazione della partizione pi&ugrave; sicura.<br>
+						Shred &egrave; un ottimo programma anche per l'eliminazione di singoli file, tramite il commando --remove come nel
+						seguenete esempio:
+					</p>
+					<p class="paragrafo"><br/> $ shred --remove [nomefile</p>
+				</div>
+				<div>
+					<h2><a name="DBAN">DBAN per lo standalone</a></h2>
+					<p class="class"><a href="https://www.dban.org">DBAN</a> (acronimo di Darik's Boot and Nuke) &egrave; un tool gratuito e
+						opensource che permette di effettuare file shredding su tutto l'Hard Drive.<br>
+						Il suo funzionamneto non dipende da alcun sistema operativo in quanto BDAN &egrave; una distribuzione GNU/Linux.
+						Per usarlo basta un supporto esterno(CD,USB etc...) e una riconfigurazione del BIOS (come quando lanciamo una Live USB
+						di Linux).
+					</p>
+					<p>
+						DBAN andrebbe utillizato prima di distruggere fisicamente un drive, cosi da rendere impossibile una sua lettura.<br>
+						Questo strumento offre diversi algoritmi di illegibilit&agrave; del disco:
+					</p>
+					<ul>
+						<li>Quick Erase</li>
+					</ul>
+					<p class="paragrafo">
+						1 passaggio-Livello Sicurezza: Basso<br/>
+						Questo metodo non fa altro che scrivere in ogni settore un valore vuoto(0). Questo metodo va utilizato solo se lo
+						vuoi riutillizare.
+					 </p>
+					 <ul>
+						 <li>RCMP TSSIT OPS-II</li>
+					 </ul>
+					 <p class="paragrafo">
+						 8 passaggi-Livello Sicurezza: Medio<br/>
+						 Il Royal Canadian Mounted Policy Technical Standard for Information Technology, Appendice OPS-II: Media Sanitazion.
+						 Questo modulo implementa un processo di randomizzazione dati
+					 </p>
+					 <ul>
+						 <li>DoD Short</li>
+					 </ul>
+					<p class="paragrafo">
+						3 passaggi-Livello Sicurezza: Medio<br/>
+						Il metodo veloce utillizato dal Dipartimento Americano della Difesa. Si basa sui passaggi 1,2 e 7 del modello 5220.22-M.
+					</p>
+					<ul>
+						<li>Dod 5220.22-M</li>
+					</ul>
+					<p class="paragrafo">
+						7 passaggi-Livello Sicurezza: Medio<br/>
+						Il metodo standard utilizzato dal Dipartimento Americano della Difesa.
+					</p>
+					<ul>
+						<li>Gutmann Wipe</li>
+					</ul>
+					<p class="paragrafo">
+						35 passaggi-Livello Sicurezza: Alto<br/>
+						Il metodo descritto da Peter Gutmann nel suo documento "Secure Deletion of Data from Magnetic and Solid-State Memory".
+					</p>
+					<ul>
+						<li>PRNG Stream</li>
+					</ul>
+					<p class="paragrafo">4/8 passaggi-Livello Sicurezza: Media/Alto<br/>
+						Questo metodo genera nei settori numeri psedorandom. Probabilmente &egrave; il migliore nei dispositivi di ultima generazione
+						poich&eacute; gli schemi di generazione variano. <br>
+						Questo metodo offre un livello di sicurezza medio di 4 passaggi e un livello alto con 8 passaggi.
+					</p>
+				</div>
+				<div>
+					<h2><a name="UsareDBAN">Come usare DBAN</a></h2>
+					<p class="paragrafo">
+						L'uso di DBAN non richiede particolari abilit&agrave;. Una volta montato in Live si presenter&egrave; in questo modo:<br>
+						<img src="../images/gty.png"/><br>
+						Troveremo una lista di dischi in uso nel nostro sistema nel nostro &egrave; un ATA Disk (virtualizzato in Virtual Machine
+						ma non ci interessa). <br>
+						In fondo troveremo le shortcut per abilitare le funzioni:<br>
+						<img src="../images/ar.png"/><br>
+						Seguiremo sempre quest leggenda per mnumero di cicli di eliminazione. Il metodo PRNG offre un alta sicurezza con 8
+						passaggi, quindi definiamola nel programma:<br>
+						<img src="../images/8.png"/><br>
+						Ora dovremmo essere pronti, torniamo nella Home del programma e clicchiamo su Spazio.
+						Affianco alla nostra partizione comparira [wipe] come da screen:<br>
+						<img src="../images/0.png"/><br>
+						Ora siamo pronti a wippare la nostra memoria. Premiamo F10 e attendiamo la fine del processo di eliminazione
+					</p>
+				</div>
+				<div>
+					<h2><a name="FileShreddingSSD"> shredding e SSD, cosa c'&egrave; da sapere</a></h2>
+				  	<p class="paragrafo">
+						Se sei veramente arrivato fino qui vuol dire che il tuo interesse &egrave; avere una memoria bonificata e pronta per
+						i riflettori dei ricercatori forensi di tutto il mondo.Quello che devi sapere &egrave; che i metodi di File Shredding
+						sono efficaci per i dischi meccanici mentre potrebbero non esserlo per gli SSD.<br>
+				  		Dico potrebbero poich&egrave; le variabili che determinano il successo o il fallimento sono diversi: nei dischi
+						meccaninici i file vengono eliminati alla vista ma mantengono lo spazio occupato per non rallenatre il processo di
+						eliminazione.Quando si creano nuovo dati,il disco riscrive i file nei settori flaggati come "eliminati".<br>
+				  		Nelle SSD quando i file vengono eliminati sar&agrave; la stessa SSD a scegliere se riscrivere o meno il settore:
+						questa decisione spetta ad un controller interno questo &egrave; possibile commandare tramite un modulo chiamato
+						<a href="https://it.wikipedia.org">TRIM</a> ,che si occupa di far riutillizare fin da subito i settorivuoti.<br>
+				  		Il TRIM negli ultimi OS e abilitato di default per garantire un automatica riscrittura di tutto.<br>
+				  		Le SSD quindi hanno una logica interna che prevedde,tramite TRIM,a riscrivere un settore fungendo da simil-shredder.
+						Questa considerazione ci porta ad intuire che basta 1 interazione(passaggio)di eliminazione.
+						Tuttavia la logica dei tool di file shredding si sposano male con l’architettura
+		 				delle SSD, quindi l’unica vera soluzione in questo senso è la pulizia totale e
+		 				completa dell’intero disco
+					</p>
+			  	</div>
+				<div>
+					<h2><a name="DistruzioneFisica">Distruzione fisica del drive</a></h2>
+					<p class="paragrafo">
+						In questa categoria rientrano tutte le tecniche che si possono effettuare per distruggere
+						completamente o parzialmente un dispositivo di memorizzazione fisica.<br>
+						C’&egrave; da premettere che la distruzione di un disco rigido
+	          			risulta essere un’operazione estremamente faticosa.</br>
+						Negli hard disk meccanici ad esempio ci vorranno diversi minuti per riuscire
+						ad arrivare ai supporti magnetici.<br>
+						Per le unità a stato solido l’operazione risulta essere pi&ugrave; semplice in parte,
+						tuttavia bisognerebbe sapereesattamente dove si tra il supporto che si occupa di memorizzare adeguatamente
+						le informazioni, senza possibilit&agrave; di rischi.<br>
+					</p>
+				</div>
+				<div>
+					<h2><a name="DistruzioneMeccanica">Distruzione Meccanica</a></h2>
+					<h5>Valido per: Unit&agrave; SD, CD/DVD</h5>
+					<p class="paragrafo">
+						Personalmente non mi sento di consigliare mazze, lanci del peso o qualunque
+		        		altra cosa vi venga in mente. I rischi di lanciare intatto il disco sono elevati senza
+		        		gli strumenti adeguati.<br>
+						Sui dischi meccanici e SSD egrave un’operazione che in parte pu&ograve; essere utile per
+		        		rimuovere i componenti interni e pensare al loro smaltimento in altra sede.<br>
+						ei dischi meccanici, utilizzando un martello molto resistente come quello da
+		        		fabbro  e colpendo rovinosamente il disco tanto da deformarne la forma,
+		        		causeremo una reazione di smagnetizzazione.<br>
+		        		Sui CD/DVD basta della semplice carta abrasiva, con un paio di passate lo strato
+		        		superficiale a specchio dovrebbe andarsene come cenere.<br>
+					</p>
+				</div>
+				<div>
+					<h2><a name="Smagnetizzazione">Smagnetizzazione</a></h2>
+					<h5>Valido per: HDD Meccanici, SSD, memorie USB, unit&agrave; SD, CD/DVD</h5>
+					<p class="paragrafo">
+						Il metodo Degausser o demagnetizzazione &egrave; il processo che consiste
+		        		letteralmente di friggere l’elettronica inviando un impulso elettromagnetico
+						(Emp) al dispositivo.<br>
+						Il pi&ugrave; affidabile &egrave; <a href="www.garnerproducts.com">Garner</a>(professionale)
+						se no si pu&ograve; creare a casa basta cercare "create a Degausser o Degausser DIY".
+					</p>
+				</div>
+				<div>
+					<h2><a name="Incenerimento">Incenerimento</a></h2>
+					<h5>Valido per: HDD Meccanici, SSD, memorie USB, unit&agrave; SD, CD/DVD</h5>
+					<p class="paragrafo">
+						Prima di procedere voglio mettervi in guardia: aldil&agrave; della pericolosit&agrave; di
+		        		infiammare qualunque oggetto, nel suolo nazionale &egrave; illegale in quanto i metalli
+						contenuti nei dischi producono fumi altamente nocivi!<br>
+						Bisogna raggiungere la temperatura di 1115° C per far colare il cobalto.<br>
+						Si possono utillizare:
+					</p>
+						<ul>
+							<li>un altoforno industriale, si possono trovare nelle aziende del settore siderurgico,</li>
+							<li>cannello a propano, spesa di 40&euro;, si raggiungono i 1000&deg;C</li>
+							<li>cannello ossiacetilenico, spesa di 100&euro;, si raggiungono i 3000&deg;C-3100&deg;C</li>
+							<li>termite, si pu&ograve; comporre in casa ma altamente pericolosa, si raggiungono i 2200&deg;C,</li>
+						</ul>
+				</div>
+				<div>
+					<h2><a name="Affogamento">Affogamento</a></h2>
+					<h5>Valido per: N/D</h5>
+					<p class="paragrafo">
+						Il solo 'affogare' un HDD nell'acqua non costituisce un danneggiamento fisico al
+						dispositivo.<br>
+						L'acqua al massimo potr&agrave; danneggiare la scheda logica che per&ograve; non &egrave; difficile da sostituire.<br>
+						Negli HDD meccanici lo strato superficiale del disco magnetico &egrave; costruito da
+						leghe di cobalto che coprono vetro, alluminio e un substrato ceramico. <br>
+						In questo caso &egrave; necessario che l'acqua entri in contatto con l'alluminio per creare un vero
+						danno al disco, ossidandolo.<br>
+						Se quindi il disco non &egrave; alimentato e il disco non sta scrivendo &egrave; quasi impossibile
+		        		che la sola acqua danneggi l'interno
+					</p>
+				</div>
+				<div>
+					<h2><a name="Corrosione">Corrosione Chimica</a></h2>
+					<h5>Valido per: HDD Meccanici, SSD, memorie USB, unit&agrave; SD, CD/DVD</h5>
+					<p class="paragrafo">
+						Anche in questo caso vi raccomando la massima prudenza, soprattutto se non
+						avete idea di ci&ograve; che state facendo. Questa operazione andrebbe fatta a disco
+						aperto, vale a dire che andrebbero tolte tutte le protezioni che coprono le
+						memorie, o nel caso di un disco meccanico, i dischi di memoria.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href = "gpg.html"> <span id = "sinistra" > GPG </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a>
+				<a href = "backUp.html"> <span id = "destra"> Back-Up dei dati</span></a>
+			</p>
+  		</div>
+	</body>
+</html>

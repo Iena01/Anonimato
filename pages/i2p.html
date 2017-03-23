@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>Anonimato in rete - I2P</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="tor.html"><span id = "sinistra"> TOR </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href = "freenet.html"> <span id = "destra" > Freenet</span></a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#I2P">I2P</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#CosaEI2P">Cos'&egrave; l'I2P</a></p></li>
+					<li><p class="menu2"><a href="#UtilizzareI2P">Come utilizzare I2P</a></p></li>
+					<li><p class="menu2"><a href="#PrimoAvvioI2P">Il primo avvio di I2p</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#ConfigurazioneI2P">Configurazione del browser con I2P</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#RisorseI2P">Risore utili di I2P</a></p></li>
+					<li><p class="menu2"><a href="#EEpsites">Eepsites</a></p></li>
+					<li><p class="menu2"><a href="#IRC2P">IRC2P</a></p></li>
+					<li><p class="menu2"><a href="#TBlogging">TBlogging</a></p></li>
+					<li><p class="menu2"><a href="#Torrent">Torrent</a></p></li>
+					<li><p class="menu2"><a href="#EDonkey">eDonkey</a></p></li>
+					<li><p class="menu2"><a href="#Mail">Mail</a></p></li>
+				</ul>
+
+			</div>
+			<div id="contenuto">
+				<h1><a name="I2P">I2P</a></h1>
+				<p>Nel panorama internet si sente di parlare di I2P. L'I2P non permette la navigazione nella Clearnet.</p>
+
+				<div>
+					<h2><a name="CosaEI2P">Cosa &egrave; l'I2P?</a></h2>
+					<p class="paragrafo">
+						A differenza di Tor che richiede gli ONION router, l'I2P &egrave; basata sulla tecnologia peer-to-peer.<br>
+						&Egrave; interessante sapere che I2P a differenza di Tor non forza l'uso di HTTPS poich&eacute; cripta il
+						traffico ancora prima che arrivi all'HTTP.
+					</p>
+				</div>
+
+				<div>
+					<h4><a name="UtilizzareI2P">Come utilizzare I2P</a></h4>
+					<p>
+						I2P &egrave; scritto in Java quindi &egrave; necessario <i>JavaRuntimeEnviroment</i>.<br>
+						Una volta avviato, il software far&agrave; tutto da solo.
+					</p>
+				</div>
+				<div>
+					<h2><a name="PrimoAvvioI2P">Il primo avvio di I2P.</a></h2>
+					<p class="paragrafo">
+						In realt&agrave; &egrave; gi&agrave; tutto funzionante ma per essere sicuri consiglio di visitare
+						la CONSOLE ROUTER I2P a questo indirizzo <a href="http://127.0.0.1:7657">qui</a><br>
+						<img src="../images/circuitoi2p.png"/>
+					</p>
+				</div>
+				<div>
+					<h2><a name="ConfigurazioneI2P">Configurazione del browser con I2P</a></h2>
+					<p class="paragrafo">
+						Basta configurare il Browser con i seguenti proxy:
+					<ul>
+						<li>HTTP=127.0.0.1(porta 4444)</li>
+						<li>HTTPS=127.0.01 (porta 4445)</li>
+					</ul>
+					Come nell'esempio qui di sotto:<br>
+					<img src="../images/setproxy.png"/>
+
+				</div>
+				<div>
+					<h2><a name="RisorseI2P">Risorse utili di I2P</a></h2>
+					<p>
+						A questo punto la domanda che tutti si fanno &egrave;: <i>Cosa faccio?</i><br>
+						L'I2P non permette (quasi) mai di connetersi alla rete esterna.
+					</p>
+				</div>
+				<div>
+					<h4><a name="Eepsitipes">Eepsites</a></h4>
+					<p class = "paragrafo">
+						Sono siti con estensione .i2p.<br>
+						Sono accessibili solo tramite il circuito I2P e fanno parte della darknet.
+						A questo indirizzo <a href="http://127.0.0.1:7558">qui</a> per avere il proprio sito I2P.
+					</p>
+				</div>
+				<div>
+					<h4><a name="IRC2P">Irc2p</a></h4>
+					<p>
+						Irc2p &egrave; il nome del tunnel che viene creato nel momento in cui si avvia per la prima volta I2P.
+						Non &egrave; altro che un server.
+					</p>
+				</div>
+				<div>
+					<h4><a name="Blogging">Blogging</a></h4>
+					<p class = "paragrafo">
+						All'interno del circuito I2P ci sono 2 eepsites che offrono servizi di microblogging http://id3nt.i2p e
+						http://jisko.i2p
+					</p>
+				</div>
+				<div>
+					<h4><a name="Torrent">Torrent</a></h4>
+					<p class = "paragrafo">
+						Il nome del progetto &egrave; I2PShark.<br>
+						Questo pu&ograve; essere risultare lento poich&eacute; deve criptare il tutto.
+					</p>
+				</div>
+				<div>
+					<h4><a name="eDonkey">eDonkey</a></h4>
+					<p class = "paragrafo">
+						E il progetto I2P pi&ugrave; famoso.<br>
+						Esiste un progetto parallelo che funge da client ad Imule basato su .NET Framework.
+					</p>
+					<div>
+						<h4><a name="Mail">Mail</a></h4>
+						<p>Susimail &egrave; un particolare servizio I2P e funge da interfaccia mail per il servizio di posta.</p>
+					</div>
+
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href="tor.html"><span id = "sinistra"> TOR </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href = "freenet.html"> <span id = "destra" > Freenet</span></a>
+			</p>
+		</div>
+	</body>
+</html>

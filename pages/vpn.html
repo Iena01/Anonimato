@@ -1,0 +1,211 @@
+<html>
+	<head>
+		<title>Anonimato in rete - VPN</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="sicurezzaDati.html"> <span id = "sinistra"> Sicurezza Dati </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="dns.html"> <span id = "destra"> DNS </span> </a>
+			</p>
+		</div>
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#VPN">VPN</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#CosaEVPN">Cos'&egrave; una VPN.</a></p></li>
+					<li><p class="menu2"><a href="#Tipi">Tipi di VPN</a></p></li>
+					<li><p class="menu2"><a href="#TipiDiProtocolli">Tipi di Protocolli</a></p></li>
+					<li><p class="menu2"><a href="#PPTP">PPTP per chi cerca la velocit&agrave;</a></p></li>
+					<li><p class="menu2"><a href="#L2TP">L2TP.IPSEC per chi vuole sicurezza &egrave; reattivit&agrave;</a></p></li>
+					<li><p class="menu2"><a href="#OPENVPN">OPEVPN per chi vuole il top della sicurezza</a></p></li>
+					<li><p class="menu2"><a href="#SSTP">SSTP per gli utenti Windows</a></p></li>
+					<li><p class="menu2"><a href="#ComescegliereunaVPN">Come scegliere una VPN</a></p></li>
+					<li><p class="menu2"><a href="#PolicydeinoLOGS">Policy dei no LOGS</a></p></li>
+		  			<li><p class="menu2"><a href="#Senonhannoituoidati">Se non hanno i tuoi dati non possono incastarti</a></p></li>
+					<li><p class="menu2"><a href="#MetodidiPagamenti">Metodi di Pagamento</a></p></li>
+					<li><p class="menu2"><a href="#NotificheDMCA">Notifiche DMCA</a></p></li>
+					<li><p class="menu2"><a href="#ListadelleVPN">Lista delle VPN</a></p></li>
+					<li><p class="menu2"><a href="#VPNMultiHop">VPN Multi-Hop.</a></p></li>
+				</ul>
+			</div>
+
+			<div id="contenuto">
+			<h1><a name="VPN">VPN (Virtual Private Network)</a></h1>
+			<p>Abbiamo visto come i proxy per vari motivi non possono garantirci sicurezza certa.</p>
+
+			<h3><a name="CosaEVPN">Cos'&egrave; una VPN</a></h3>
+			<p class = "paragrafo">
+				Le VPN sono dei "tunnel" criptati che, esattamente come i proxies effettuano da tramite tra client e server.<br>
+				Le VPN sono originariamente pensate per creare una rete LAN collegata tramite internet, esatamente come una rete fisica.
+				Utlizzando una VPN non dovremmo preoccuparci di trovare liste funzionanti ne protocolli particolari:
+				tutto il traffico che viaggia in una VPN viene cifrato a 128 bit.<br>
+				Il vantaggio rispetto ad un proxy &egrave; la reattivit&agrave; che spesso la VPN garantisce.
+				Inoltre con una VPN non &egrave; neccessario rincofigurare browser e tools per essere anonimi.
+			</p>
+			<div>
+				<h3><a name="Tipi">Tipi di VPN</a></h3>
+				<p>
+					Nel mercato delle VPN possiamo defninire almeno 3 tipi di vpn: TRUSTED VPN, SECURE VPN e HYBRID VPN.<br>
+					Le trusted VPN sono le pi&ugrave; sicure tanto che per usarle bisogna avere dei speciali contratti con gli ISP.
+					Le hybrid sono la fusione tra le trusted e le secure VPN. Ci&ograve; che determina la qualit&agrave; della sicurezza oltre
+					ovviamente alla policy e stabilit&agrave; dei servizi &egrave; il tipo di protocollo che viene fornito dal server &egrave;
+					la <i>forza</i> della chiave. <br>
+					Spesso per&ograve; le VPN non sono sicure: ad esempio fino a pochi anni fa il noto prvider
+					Ipredator offriva solo connettivit&agrave; tramite il protocollo PPTP questo protocollo era stato accusato di non essere
+					sicuro al 100%(creatore Microsoft) infatti pensiamo che lo spionaggio governativo lo controlli.
+				</p>
+			</div>
+
+			<div>
+				<h3><a name="TipiDiProtocolli">Tipi di protocolli</a></h3>
+				<p><font color = #FFFFFF><b><a name="PPTP">PPTP</a></b>, per chi cerca la velocit&agrave;</font></p>
+				<p class = "paragrafo">
+					Il protocollo PPTP &agrave; stato svillupato da Microsoft per crearr reti VPN aziendali tramite collegamento dial-up.
+					Questa VPN f&agrave; affidamento a MS-CHAP per la gestione dell'autenticazione.<br>
+					Questo protocollo e facilmente installabile su qualunque dispositivo.<br>
+					Il protocollo PPTP, pu&ograve; solo supportare chiavi a 128 bit. Data la sua scarsa sicurezza
+					oggi e usata nel gaming online, torrent, streaming etc...
+				</p>
+			</div>
+
+			<div>
+				<p><font color = #FFFFFF><b><a name="L2TP">L2TP</a></b>,IPSEC,per chi vuole sicurezza &egrave; reattivit&agrave;</font></p>
+				<p class = "paragrafo">L2TP &egrave; un protocollo di tipo VPN che di base non offre nessuna sicurezza dei dati, questo &egrave;
+					il motivo perch&egrave; viene affiancata alla suite IPSEC. <br>
+					L2TP/IPSEC &egrave; quindi un mix di protocollo di tunneling e di crittografia gi&agrave; implementato negli O.S.<br>
+					Al momento non esistono gravi vulnerabilit&agrave; per questo protocolli.
+					Tuttavia una ricerca da due esperti fanno intendere che NSA sta lavorando assiduamente per violarlo.<br>
+					Se pure non ci siano fonti certe confermano che l'IPSEC sia uno dei target principali dell'NSA. Ad ogni modo,
+					L2TP, IPSEC esegue l'incapsulamento dei dati in 2 passagi con chiavi a 256 bit,rendendolo tecnicamnete pi&ugrave; lento ma coi
+					kernel di ultima generazione permette di cifrare e decifrare tutto pi&ugrave; velocemente. Un fattore 'rilevante' &egrave;
+					causato che L2TP di default viaggia sulla porta UDP 500: questa per&ograve; viene bloccata dai firewall e costringe il
+					port-forwanding sul router.
+				</p>
+			</div>
+
+			<div>
+				<p><font color = #FFFFFF><b><a name="OPENVPN">OPENVPN</a></b>, per chi vuole il top della sicurezza.</font></p>
+				<p class = "paragrafo">
+					Con OPENVPN si intende software opensource utilizzato per creare tunnel crittografati tra due sistemi informatici il quale
+					sfrutta i protocolli a base SSLV3/TLSV1 e la libreria OpenSSL. <br>
+					La sua natura open lo rende configurabile senza rischi di port-forwandig (per per soddisfare le richieste di tipo HTTP
+					attraverso SSL).<br>
+					La libreria che utilliza (OpenSSL) pu&ograve; far uso di diversi cifrari (Blowfish,AES,DES etc...) sebbene le VPN usano
+					cifrari AES o Blowfish.<br>
+					Quest'ultimo, a base 128 e i default OpenVpn. AES &egrave; un cifrario relativamnete nuovo ed &egrave; utillizato dai
+					governi mondiali per prottegere i loro dati: essendo in grado di gestire blocchi a 128 bit pu&ograve; manipolare
+					informazioni grandi fino a 1GB, a differenza di Blowfish che essendo a 64 bit ne pu&ograve; gestire solo met&agrave;. <br>
+					Rispetto al protocollo IPSEC e meno veloce poich&egrave; non permettono di sfruttare le CPU.
+				</p>
+			</div>
+
+			<div>
+				<p><font color = #FFFFFF><b><a name="SSTP">SSTP</a></b>, per gli utenti Windows</font></p>
+				<p class = "paragrafo">
+					SSTP &egrave; un protocollo di tunneling introdotto da Microsoft ed &egrave; nativo per tutte le versioni da Vista in poi.<br>
+					Come per OpenVpn fa uso della crittografia a base SSLV3 permette quindi l'uso del tunnel anche dietro
+					reti prottette.
+				</p>
+				Al momento non risulta esserci un piano affidabili per il mondo mobile.<br>
+				Le migliori rimangono OpenVpn e L2TP/IPSEC poichè SSTP era sotto inchiesta.
+				</p>
+			</div>
+
+			<div>
+				<h3><a name="ComescegliereunaVPN">Come scegliere una VPN</a></h3>
+				<p>Non usare VPN free.</p>
+				<p>Esistono VPN gratis ed a pagamento. D'ora in poi parleremo di VPN a pagamento.</p>
+				<p>Perch&eacute;?</p>
+				<ol>
+					<li>Mantenere un servizio VPN ha dei costi,</li>
+					<li>I provider potrebbero vendere i tuoi dati,</li>
+					<li>I provider potrebebro riuttilizare la tua banda,</li>
+					<li>I provider potrebbero riempirti di pubblicità,</li>
+					<li>Non sei tutelato.</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3><a name="PolicydeinoLOGS">Policy dei NO LOGS</a></h3>
+				<p class = "paragrafo">
+					I logs sono quei file che vengono generati per ogni attivit&agrave; effettuate in un sistema informatico:
+					nel caso delle VPN, i log possono memorizzare informazioni come IP, dati d'accesso e altre informazioni che non
+					vengono cifrate prima dell'Handshake.
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="Senonhannoituoidati">Se non  hanno i tuoi dati non possono incastarti</a></h2>
+				<p>
+					Immagina di essere titolare di una azienda di provider VPN e nel cuore della notte vi bussa l'FBI con un mandato
+					di perquisizione dei dati. Non faresti il palladino della giustizia a difendere uno sconosciuto. Non esiste
+					nessuno provider VPN che rischierebbe anni di carcere.<br>
+					Il punto chiave &egrave; che un provider VPN non pu&ograve; rilasciare informazioni di te che non ha, e quindi non
+					possono essere incriminati per non avere collaborato dando informazioni su di te.<br>
+					Di solito i provider richiedono: nome, email, dati di pagamento e indirizzi di fatturazioni. I miglior
+					provider VPN hanno capito che &egrave; possibile consentire sicurezza offrendo loro pagamenti con le Cryptomenete,
+					questo consente, di rendere anonima la compra-vendita e sollevando i venditori di memorizzare informazioni di
+					fatturazione.
+				</p>
+			</div>
+
+			<div>
+				<h3><a name="Metodidipagamenti">Metodi di pagamento</a></h3>
+				<p class = "paragrafo">
+					Se acquistiamo VPN con paypal o carta di credito lasciamo tracce non indiferenti. Quindi consiglio un acquisto
+					tramite Cryptovalute come Bitcoin o Litecoin.
+				</p>
+			</div>
+
+			<div>
+				<h3><a name="NotificheDMCA">Notifiche DMCA</a></h3>
+				<p class = "paragrafo">
+					Il DMCA &egrave; un insieme di leggi americane che tutelano la distribuzione illegale di materiale protteto d'autore
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="ListadelleVPN">Lista delle VPN</a></h2>
+				<p>
+					La lista che ti presento ora raccoglie le VPN pi&ugrave; popolari che ho trovato.<br>
+					Vedrai alcune VPN non tutte poich&egrave; ne esistono davvero tante:
+				</p>
+				<ul>
+					<li>AIRVPN</li>
+					<li>BTGUARD (non registra L'IP)</li>
+					<li>BOXPN</li>
+					<li>EXPRESSVPN</li>
+				</ul>
+			</div>
+
+			<div>
+				<h2><a name="VPNMultiHop">VPN Multi-Hop</a></h2>
+				<p>
+					Nel momento che ti colleghi ad una VPN tutto il traffico &egrave; protetto da una sola VPN. Con MULTI-Hop si intende
+					la caratteristica che definisce la pratica di connetersi da una VPN ad un altra.<br>
+					Le connessioni Multi-Hop garantiscono significativi vantaggi sulla sicurezza e sulla privacy.
+					L'hopping per&ograve; pu&ograve; causare rallentamenti alla connessione.<br>
+					Per il resto funziona normalmente come una VPN semplice. Gli unici provider che offrono questo servizio sono:
+				</p>
+				<ul>
+					<li>NordVPN</li>
+					<li>IVPN</li>
+					<li>Perfect Privacy</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div id="footer">
+			<p class="console">
+				<a href="sicurezzaDati.html"> <span id = "sinistra"> Sicurezza Dati </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="dns.html"> <span id = "destra"> DNS </span> </a>
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,298 @@
+<html>
+	<head>
+		<title>Anonimato in rete - Recupero Dati</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href = "sensori.html"> <span id = "sinistra"> Sensori Fotocamera </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="identita.html"> <span id = "destra"> Identit&agrave; Online </span> </a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#IndirizziIP">Indirizzi IP</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#Recuperodeidati">Recupero dei Dati</a></p></li>
+					<li><p class="menu2"><a href="#Forensics">Post-Mortem Forensics</a></p></li>
+					<li><p class="menu2"><a href="#QualeOs">Quale OS utillizare per la P.M Forensics</a></p></li>
+					<li><p class="menu2"><a href="#Caine">Come funziona CAINE</a></p></li>
+					<li><p class="menu2"><a href="#Qualeusare?">Testdisk o Photorec,quale utilizzare?</a></p></li>
+					<li><p class="menu2"><a href="#Guidaalluso">Breve guida all'uso di PhotoRec</a></p></li>
+				</ul>
+			</div>
+
+			<div>
+				<h1><a name="IndirizziIP">Recupero dei Dati</h1></a>
+				<p class = "paragrafo">
+					&Egrave; arrivato veramenete il momento di constatare se realmente i metodi
+					utillizati rendono illegibili la memoria.<br>
+					Premetto che l'Analisi Forense e un argomento molto complesso e molto
+					professionale anche noi lo tratteremo in modo "superficiale".Proxy
+			<div>
+				<h2<a name="Recuperodeidati">Post-Mortem Forensics</h2></a>
+				<p class = "paragrafo">
+					In quasi tutte le Analisi Forense si dovrebbe lavorare in ambiente pi&ugrave;
+					asettico possibile e senza l'interferenza di tool in backround.<br>
+					Un ricercatore forense oltre ad avere la copia dei dati (per evitare incidenti
+					di percorso) possiede anche strumenti adatti per effettuare lavri "puliti"
+					e senza autp-sabotamenti.<br>
+					Ecco perch&egrave; &egrave; preferibile utilizzare un Sistema Operativo Live
+					contenente i tool per procedere alla ricerca nel disco.
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="Forensics">Qual'&egrave; OS utilizzare per la P.M forensics</h2></a>
+				<p class = "paragrafo">
+					Possiamo innanzitutto identificare due tipi di Sistemi Operativi:<br>
+					<ul>
+						<li>Rescue Kit OS</li>
+						<li>Forensics OS</li>
+					</ul>
+					I primi sono pensati esclusivamente per il recupero di dati mentre i secondi sono
+					pi&ugrave; indicati per lavorare proprio nella navigazione di un sistema limitando
+					al minimo i danni.</p>
+					<p class = "paragrafo">
+						I Rescue OS andava forte una volta ma oggi sono stati rimpiazzati: dal
+						celebre: <a href="http://www.hirensbootcd.org">Hiren's Boot CD</a>,
+						<a href="http://www.ultimatebootcd.com">Ultimate Boot CD</a> e
+						<a href="https://falconfour.wordpress.com">FalconFour's Ultimate Boot CD</a>.
+						L'unico che sembra ancora essere in via di sviluppo &egrave;
+						<a href="http://www.system-rescue-cd.org/SystemRescueCd_Homepage">SystemRescueCd</a>.<br>
+						Il “mercato” dei Forensics OS &egrave; invece pi&ugrave; florido:
+						oltre al fatto che molte penetration tests integrano toolset dedicati
+						esistono anche interi sistemi operativi pensati esclusivamente per questa pratica.<br>
+						&Egrave;stremamente importante che l'OS non intacchi minimamente il disco su cui lavorare.<br>
+						Sebbene questo rischio pu&ograve; essere limitato da
+						<a href="https://it.wikipedia.org/wiki/Write_blocker">Write Blocker</a>
+						(esso si mette tra hard disk e pc per non toccare/alterare il disco).
+						Utilizzando la RAM mode (in fase di boot loade) si pu&ograve; accedere
+						ad ogni memoria in modalit&agrave; "solo lettura" per non alterare il
+						disco,il ch&grave; &egrave; quasi un obbligoconsiderando che un Write
+						Blocker pu&ograve; costare dai 500€ in su.<br>
+						La pi&ugrave; celebre in Italia &egrave; <a href="http://www.caine-live.net">CAINE</a>
+	  				una distribuzione tutta italiana basata su Ubuntu e utilizzata anche dalle forze dell’ordine.
+					</p>
+				</div>
+
+				<div>
+					<h2><a name="Caine">Come funziona CAINE</h2></a>
+					<p class = "paragrafo">
+						CAINE OS &egrave; a tutti gli effetti una distribuzione GNU/Linux pensata per
+						funzionare in modalit&agrave; Live, caricata su una USB o un DVD.
+						Noi useren,o CAINE solo per vedere traccie lasciate nelle partizioni che
+						credevamo di aver eliminato.<br>
+						CAINE offre anche una logica di "mount in read-only": questo significa che
+						non solo dovremo decidere quali partizioni montare PRIMA di poterle utilizzare
+						ma eviteremo anche di inquinare le zone che andremo a scannerizzare.
+					</p>
+				</div>
+
+				<div>
+					<h2><a name="Qualeusare">Testdisk O Photorec,quale usare?</h2></a>
+					<p class = "paragrafo">
+						TestDisk &egrave; un tool pensato per recuperare intere partizioni eliminate da un disco fisso.
+						Oltre a questa divina possibilit&agrave; offre anche il recupero di settori di boot
+						danneggiati con filesystem FAT e NTFS e ripristinare la Master File Table delle
+						partizioni NTFS.
+						La tool si presenta in modalita riga di commando (senza GUI) il suo funzionamento &egrave;
+						molto semplice.</p>
+
+					<p class = "paragrafo"><a href="http://www.caine-live.net">CAINE</a>
+						PhotoRec &egrave; un tool abbinato a TestDisk che ci permette di recuperare file,
+						documenti, video, immagini e altro da memorie esterne o interne.La sua peculearit&agrave;
+						e che non opera in modalit&agrave; write evitando cosi di operare e commetere qualche
+						errore come riscrivere il disco etc...
+					</p>
+
+					<p class = "paragrafo">
+						Photorec e disponibile per qualunque sistema operativo:
+						<ul>
+							<il>Dos/Win9x</il>
+							<il>Windows (32/64 bit)</li>
+							<li>Linux (32/64 bit)</li>
+							<li>OSX (Intel/PowerPC)</li>
+							<li>BSD</li>
+						</ul>
+
+						Ed &egrave; disponibile in formato pacchetto con TestDisk gratuitamente
+						<a href="http://www.cgsecurity.org/wiki/Download_TestDisk">sul sito ufficiale.</a>
+						Il suo utilizzo &egrave; possibile inoltre su un'enorme variet&agrave; di filesystem:
+						<ul>
+							<li>exFAT/FATx</li>
+ 							<li>NTFS</li>
+							<li>ext2/ext3/ext4</li>
+							<li>HFS+</li>
+						</ul>
+						Il suo utilizzo pu&ograve; essere effettuato su qualunque supporto esterno standard,
+						purch&egrave; il sistema operativo lo riconosca e sia in grado di leggerne i contenuti.
+						&Egrave; in gradi di leggere (quasi) qualunque tipo di formato, da classici JPEG/PNG/ZIP/
+						PDF fino ai pi&ugrave; rari LZO/XAR/PPM/RA fino ad arrivare a quelli proprietari come
+						PSD/MHBD/MAX/GI e cos&igrave; via (la lista completa sul
+						<a href="http://www.cgsecurity.org/wiki/File_Formats_Recovered_By_PhotoRec">sul sito ufficiale.</a>).
+					</p>
+				</div>
+
+				<div>
+					<h3><a name="Guidaalluso">Breve guida all'uso di PhotoRec</h2></a>
+						<p class = "paragrafo">
+							PhotoRec viene distribuito in due versioni: GUI e CLI. La versione GUI &egrave;
+							ovviamente pi&ugrave; semplice in quanto gestisce tutto da interfaccia grafica.<br>
+							Ovviamnete se sul nostro O.S non e presente non servir&agrave; fare altro che installarlo,
+							con un semplice comando da terminale.
+						</p>
+
+						<p class = "console" >
+							<br> $ sudo apt-get install qphotorec
+						</p>
+
+						<p class = "paragrafo">
+							Aspettiamo che tutto venga installato e lo apriamo col commando:
+						</p>
+
+						<p class = "console" >
+							<br> $ sudo qphotorec
+						</p>
+
+						<p class = "paragrafo">
+							Ecco come si presenta la tool:</br>
+							<img src="../images/photorec.png"/><br>
+						</p>
+						<p class ="paragrafo">
+							Se non riuscite a vedere la partizione in cui volete lavorare dovrete selezionare il
+							disco che contiene la partizione.In questo caso e la Select Box contenente "Verbatim STORE N GO".<br><br>
+							Selezionate la partizione in cui volete lavorare,(nell'esempio FAT32|30 GB...)il file system,
+							il tipo di scansione Free/Whole (nel nostro caso Free va benissimo) e infine scegliere la destinazione
+							su dove salvare il tutto.<br><br>
+							Ora non dobbiamo far altro che aspettare che il programma finisca di
+							scansionare il drive.<br><br>
+							Per i pi&ugrave; esperti c'&egrave; sempre il terminale.
+							Bisogna vedere se e installata l'ultima release col commando:
+						</p>
+						<p class = "console">
+							<br> $ sudo apt-get install photorec
+						</p>
+						<p class = "paragrafo">
+							Se nel nostro O.S e presente la tool non resta che lanciarla col commando:
+						</p>
+						<p class = "console">
+							<br> $ sudo photorec
+						</p>
+						<p class ="paragrafo">
+							Come abbiamo visto abbiamo richiamato anche qui il sudo in quanto dobbiamo
+							assicurarci che PhotoRec sia lanciato in modalit&agrave; amministratore.<br><br>
+							Siamo ora di fronte a una schermata che ci lista tutti i dischi riconosciuti nel sistema:<br>
+							<img src="../images/dischi.png"/><br><br>
+
+							Possiamo sceglierne uno con i tasti Su/Gi&ugrave;, selezionarlo con Invio o in caso di
+							errore premere il tasto Q.<br><br>
+							&Egrave; arrivato il momento di scegliere la partizione su cui vogliamo lavorare
+							(selezionando Whole Disk effettueremo un recupero su tutto il disco):<br>
+							<img src="../images/sceltadisco.png"/><br><br>
+
+							Scegliamo che tipo di filesystem viene utilizzato:<br>
+							<img src="../images/filesystem.png"/><br><br>
+
+							Se scegliamo di scansioanre una partizione ci verr&agrave; chiesto se vogliamo
+							scasnsionare tutto il disco o solo i settori vuoti.<br>
+							<img src="../images/free.png"><br><br>
+
+							Ora siamo pronti a scegliere dove salvare i risultati.Ricordate che i tasti utilizzati
+							poco prima valgono anche qui (in particolare Invio per entrare in
+							una cartella e Q per tornare indietro) con l’aggiunta del tasto C per selezionare la
+							cartella (e le sottocartelle).Se siamo entrati in una cartella sbagliatata si pu&oigrave;
+							sempre tornare indietro premendo sui due puntini.<br>
+							<img src="../images/cartelle.png"><br><br>
+
+							Se &egrave; stato fatto tutto secondo i piani il software inizier&agrave; a scavare nella
+							partizione desiderata e quindi a mettere tutto dentro una cartella dedicata.<br>
+							<img src="../images/finitascansione.png"><br><br>
+
+							Vediamo di fare qualche esempio:abbiamo formattato(senza alcun shredding) una USB la quale conteneva
+							in passato Ubuntu.&Egrave; stata creata quindi una partizione FAT in cui abbiamo aggiunto i seguenti file:<br>
+							<img src="../images/fat32.png"><br><br>
+
+							Ogni file &egrave; stato rinominato in base alle azioni che abbiamo eseguito:</p>
+
+							<ul>
+
+								<li> deleted but not empty.jpeg: un'immagine che &egrave; stata eliminata ma non sonostati eliminati
+									   file temporanei n&egrave; svuotato il cestino,</li>
+
+								<li> deleted.jpeg: un'immagine che &egrave; stata eliminata e file temp e cestino sono stati svuotati,</li>
+
+								<li> normal.jpeg: un'immagine a cui non &egrave; stata applicata nessuna azione,<li>
+
+								<li> normal.jpeg.gpg: un'immagine criptata,</li>
+
+								<li> secure-shred-1.jpeg: un'immagine che &egrave; stata eliminata tramite file shredding con algoritmo
+									   tipo DoD Short a 1 passaggio,</li>
+
+								<li> secure-shred-7.jpeg: un'immagine che &egrave; stata eliminata tramite file shredding
+									   con algoritmo tipo PRNG Stream a 7 passaggi,</li>
+
+								<li> shred-1.jpeg: un'immagine che &egrave; stata eliminata tramite file shredding con
+										 algoritmo tipo Quick Erase a 1 passaggio,</li>
+								<li> shred-7: un'immagine che &egrave; stata eliminata tramite file shredding con
+										 algoritmo tipo DoD a 7 passaggi.</li>
+
+									 </ul>
+
+									 <p class ="paragrafo">
+							 		 	 Vediamo come si comporta PhotoRec:<br>
+										 <img src="../images/vfre.png"><br><br>
+
+										 Nel nostro caso sono stati recuperati oltre 17 GB di file!<br>
+										 <img src="../images/17gb.png"><br><br>
+										 Com'&egrave; possibile??<br><br>
+
+										 All'inizio di questo esempio abbiamo spiegato che la nostra chiavetta &egrave; stata
+										 formattata in FAT tramite un semplice comando di formattazione.Questa chiavetta
+										 prima della formattazione conteneva una distribuzione GNU/Linux (Ubuntu) e prima
+										 ancora era una semplice USB utillizata per lo spostamento dei file su OSX.<br>
+										 <img src="../images/fileosx.png"><br><br>
+
+										 In una delle dir recuperate troviamo dei files contenenti l'estensione .apple,
+										 sintomo che il sistema operativo precedentemente usato era appunto OSX.<br>
+										 <img src="../images/osxfile.png"><br><br>
+
+										 Da questo file possiamo capire che all'interno era presente un file di configurazione
+										 di Adobe Fireworks.<br>
+
+										 <img src="../images/adobe.png"><br><br>
+										 In questa porzione abbiamo trovato una partizione HFS,rafforzando l'ipotesi che
+										 e stata usata in ambiente OSX.<br><br>
+
+										 Ma voi vi chiederete: e i files? <br>
+										 <img src="../images/screenfile.png"><br><br>
+
+										 Ci risultano tre file,andiamo ad esaminarli:
+										 <ul>
+											 <li>0034064.jpg: risulta essere lo stesso file sia di deleted.jpg che di deleted but
+												   not empty.jpg, quindi i file eliminati in maniera “normale”,</li>
+ 											 <li>f0037328.jpg: risulta essere shred.jpeg, vale a dire il file shreddato in modalit&agrave;
+												   Quick Erase (1 step),</li>
+											 <li>t0037328.jpg: risulta essere l'anteprima di un'immagine, segno che
+													 probabilmente il sistema operativo ha creato un file temporaneo quando il file
+												   &egrave; stato aperto.</li>
+												 </ul>
+												 In conclusione possiamo dire che solo le eliminazioni normali e il Quick Erase sono
+												 risultati inutili mentre tecniche di DoD e PNRG sono risultate efficaci.
+											 </p>
+										 </div>
+									 </div>
+
+									 <div id="footer">
+									 	<p class="console">
+									 		<a href = "sensori.html"> <span id = "sinistra"> Sensori Fotocamera </span> </a> |
+									 		<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+									 		<a href="identita.html"> <span id = "destra"> Identit&agrave; Online </span> </a>
+									 	</p>
+								 </div>
+							</body>
+						 </html>

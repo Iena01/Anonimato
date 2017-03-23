@@ -1,0 +1,356 @@
+<html>
+	<head>
+		<title>Anonimato in rete - Info WEB</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="i2p.html"><span id = "sinistra"> I2P </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="pgp.html"><span id = "destra"> PGP </span></a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#RisorseLocali">Risorse Locali</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#ModIncognita">Modalit&agrave; incognita</a></p></li>
+					<li><p class="menu2"><a href="#HTTPS">HTTPS</a></p></li>
+					<li><p class="menu2"><a href="#Cookie">Cookie</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SicurezzaCookie">Impatto cookie sulla sicurezza</a></p></li>
+						<li><p class="menu3"><a href="#ControlloCookies">Controllo sui cookies</a></p></li>
+						<li><p class="menu3"><a href="#CookiesSpeciali">CookieSpeciali</a></p></li>
+						<li><p class="menu3"><a href="#SicurezzaCookieSpeciale">Impatto dei cookies speciali sulla sicurezza</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#Javascript">Javascript</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SicurezzaJavascript">Impatto di JavaScript sulla sicurezza</a></p></li>
+						<li><p class="menu3"><a href="#ControlloJavaScript">Controllo su JavaScript</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#Flash">Flash</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SicurezzaFlash">Impatto di Flash sulla sicurezza</a></p></li>
+						<li><p class="menu3"><a href="#ControlloFlash">Controllo su Flash</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#Java">Java</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SicurezzaJava">Impatto di sicurezza su Java</a></p></li>
+						<li><p class="menu3"><a href="#ControlloJava">Controllo su Java</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#Activex">Activex</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SicurezzaActivex">Impatto di Activex sulla sicurezza</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#WebRTC">WebRTC</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#ControlloWebRTC">Controllo su WebRTC</a></p></li>
+					</ul>
+				</ul>
+				<p class="menu1"><a href="#Fingerprinting">Fingerprinting del browser</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#DefinireIlFingerprinting">Definire il Fingerprinting del browser</a></p></li>
+					<li><p class="menu2"><a href="#DifendersiDalFingerprinting">Difendersi dal Fingerprinting del browser</a></p></li>
+				</ul>
+				<p class="menu1"><a href="#DownloadFile">Download di File</a></p>
+				</ul>
+			</div>
+
+			<div id="contenuto">
+
+
+				<div>
+						<h1><a name="RisorseLocali">Risorse Locali</a></h1>
+						<div>
+							<h3>Modalit&agrave; incognita.</h3>
+							<p class="paragrafo">La modalit&agrave; incognita lavora su queste risorse:</p>
+							<ul>
+								<li><b>Cookie</b>: non usa cookie creati in precedenza e quelli creati verrano eliminati alla chiusura.</li>
+								<li><b>Cronologia</b>: le ricerche effettuate non vengono memorizzate nello storico.</li>
+								<li><b>Cache</b>:non vengono usati file memmoriati nel PC ne vengono salvati=caricamento piu veloce.</li>
+								<li><b>Estensione</b>: non vengono caricati addon nel browser.</li>
+							</ul>
+
+							<p>
+								L'utilit&agrave; della modalit&agrave; incognita &egrave; il vantaggio di non dover eliminare la cronologia,
+								cache e cookie.<br>
+								Ricordatevi che &egrave; solo una incognita non fantasma quindi gli ISP o i governi di spionaggio monitorano
+								lo stesso il traffico.
+							</p>
+						</div>
+						<div>
+							<h3><a name="HTTPS">HTTPS</a></h3>
+							<p class="paragrafo">
+								Con HTTPS si intende un protocollo creato per permettere la cominicazione via web tra server e client.
+								Con HTTPS si intende il protocollo HTTP con connessione criptata TLS.
+							</p>
+						</div>
+						<div>
+							<h3><a name="Cookie">Cookie</a></h3>
+							<p class="paragrafo">
+								In informatica un cookie &egrave; un file di testo memorizzato all'interno di un PC utilizzato per tenere
+								traccia di login, pagine, grafica, lingua etc... Un cookie &egrave; composto da:
+							</p>
+							<ul>
+								<li><b>Nome</b>: ovvero un identificatote che lo riconosce(OBBLIGATORIO).</li>
+								<li><b>Valore</b>: ovvero il contenuto che &egrave; presente nel cookie.</li>
+								<li><b>Scadenza</b>: ovvero la durata che il cookie avr&agrave; all'interno del browser.</li>
+								<li><b>Sicurezza</b>: ovvero se il cookie deve essere o meno in HTTPS.</li>
+								<li><b>HTTPonly</b>: ovvero se il cookie pu&ograve; essere trasmesso tramite HTTP o manipolato anche dai client-side.</li>
+							</ul>
+						</div>
+						<div>
+							<p class="console"><h3><a name="SicurezzaCookie">Impatto dei cookie sulla sicurezza</a></h3></p>
+							<p>
+								I cookie eseguono svariate funzioni tra cui memorizzare "dati statistici" e possono essere creati anche
+								da terzi siti. Inoltre, i cookies possono lasciare traccia dei siti che visitiamo poich&eacute; tutti i siti
+								lasciano almeno un cookie all'interno del browser.<br>
+								Un articolo del 2013 spiega come NSA monitora gli utenti tramite cookies di terze parti es.
+							 	Google Analytics. <br>
+								Per capirci meglio avete presente quando determinati annuci sembrano seguirvi o addiritura ripetersi su
+								pi&ugrave; pagine? Ecco colpa dei cookies (chiamati "cookies di profilazione") che si occupano di memorizzare
+								i tuoi interessi.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="ControlloCookies">Controllo sui cookies</a></h3></p>
+							<p class="paragrafo">
+								Come gi&agrave; detto i cookie garantiscono il funzionamento corretto della pagina.
+								Bloccarli completamnete tramite browser &egrave; sconsigliato per ovvi motivi.
+							</p>
+							<p>Quindi cosa fare?</p>
+							<p class="paragrafo">
+								Si pu&ograve; decidere di usare la "modalit&agrave; incognita, oppure quelle estensioni denominate
+								"cookies manager", in grado di bloccare il dominio di esse. <br>
+								L'importante &egrave; sapere che i cookies come Analytics, ads e CDN potrebbero tracciare la navigazione.<br>
+								Tra le tante estensioni la migliore &egrave; sicuramnete Ghostery che permette di bloccare a monte tutti gli script.
+							</p>
+						</div>
+						<div>
+							<h2><a name="CookiesSpeciali">Cookie "speciali"</a></h2>
+							<p>
+								In aggiunta ai cookies regolari presenti in rete ne esistono altri "proprietari".<br>
+								Tip Adobe ha creato i "Local Stored Objects" (Flash cookies). Mozilla ha integrato nelle ultime
+								versioni il "DOM Storage".
+							</p>
+						</div>
+						<div>
+							<h3><a name="SicurezzaCookieSpeciale">Impatto dei cookies "speciali" sulla sicurezza</a></h3>
+							<p>Flash cookies, come bloccarli</p>
+							<p class="paragrafo">
+								Flash andrebbe disattivato. Per farlo basta dedicare il valore "0" allo spazio dedicato al LSO.
+							</p>
+
+							<p>DOM storage, come bloccarlo</p>
+							<p class="paragrafo">
+								Disattivare DOM &egrave; parecchio facile. Basta digitare sull'indirizzo "about:config", "storage", fare
+								click sulla voce "dom.storage enabled" finche non diventa "false".
+							</p>
+						</div>
+					</div>
+					<div>
+						<h1><a name="Javascript">JavaScript</a></h1>
+						<p class="paragrafo">
+							Nel mondo web il JavaScript &egrave; un autorit&agrave;. &Egrave; un linnguaggio di scripting e viene utillizato per
+							intercettare eventi dal client come il passaggio del mouse, una notifica una scroll etc...,
+							queste funzioni HTML non sarebbe in grado di farle.
+						</p>
+						<div>
+							<h3><a name="SicurezzaJavascript">Impatto dei JavaScript sulla sicureza</a></h3>
+							<p>
+								Nonostante ci&ograve; JavaScript &egrave; in grado di interagire con le attivit&agrave;
+								dell'utente: per esempio raccoglie tutto ci&ograve; che l'utente scrive sul web, fungendo da keylogger.<br>
+								Con il J.S. &egrave; possibile valutare se l'utente fa uso di Tor e VPN, permette la visualizazione
+								dei plugin, font installati, la Time Zone (risalire alla tua nazionalit&agrave;), il tuo User-Agent
+								(anche se viene spoofato tramite controllo incrociato di pseudo-classi CSS), lo storico, e alcuni
+								programmi installati.<br>
+								J.S. inoltre pu&ograve; essere utilizzato come "controller" a seguoito di un attacco XSS(Cross Site Scripting)
+								esso consente di prendere possesso di una pagina web e di automatizzare le operazioni client(cookie),
+								o di reindirizzare ad una pagina fake.
+							</p>
+						</div>
+						<div>
+							<h3><a name="ControlloJavascript">Controllo su J.S.</a></h3>
+							<p class="paragrafo">Per ogni browser troviamo la scelta migliore.
+								Ecco l'estensioni per i browser pi&ugrave; popolari:</p>
+							<ul>
+								<li>
+									<b>Mozilla Firefox</b>: per Mozilla l'estensione migliore e NOSCRIPT.
+									Questa non solo blocca J.S., ma anche Flash, Java. NoScript interecetta e blocca attacchi di
+									tipo XSS e clickjacking.<br>
+								</li>
+								<li>
+									<b>Google Chrome</b>: Google purtroppo non f&agrave; affidamneto a NoScript, tuttavia e presente
+									uMatrix che a tratti &egrave; anche pi&ugrave; completa.<br>
+								</li>
+								<li><b>Opera Web Browser</b>: anche qui troviamo l'eccelente uMatrix.</li>
+								<li>
+									<b>Safari</b>: sul browser macOS/Osx &egrave; possibile disabilitare il J.S. direttamente dalle
+									preferenze---->Sicurezza---->Abilita J.S.<br>
+								</li>
+								<li>
+									<b>Microsoft Edge</b>: &egrave; possibile disabilitarlo tramite il perocorso Configurazione
+									Utente---->Template Amministrativi---->Componenti---->Windows---->Microsoft edhe
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h1><a name="Flash">Flash</a></h1>
+							<p class="paragrafo">
+								Flash &egrave; una tecnologia svillupata da Macromedia e acquistata da Adobe.<br>
+								Bisogna ricordare che per&ograve; ormai Flash &egrave; morto, o meglio sta morendo.
+								Le statistiche dicono che l'1% dei siti web fanno uso dei Flash, Chrome dal 2017 lo disabiliter&agrave;
+								completamente cosi come Firefox(un anno dopo).
+								La stessa Adobe ha dichiarato l'abbandondono della tecnlogia a favore dell'HTML5.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="SicurezzaFlash">Impatto di Flash sulla sicurezza</a></h3></p>
+							<p>
+								Il Flash Player &egrave; stato oggetto di critica esso &egrave; ritenuto pericoloso per l'utente,
+								instabile e poco performante.Dall'ultima release rilasciata sono centinaia le vulnerabilit&agrave; trovate.
+							</p>
+						</div>
+						<div>
+							<h3><a name="ControlloFlash">Controllo su Flash</a></h3>
+							<p class="paragrafo">L'unico consiglio che mi sento di darvi &egrave; la disintallazione completa</p></i>
+						</div>
+						<div>
+							<p class="console"><h1><a name="Java">Java</a></h1></p>
+							<p class="paragrafo">
+								Java &egrave; un linguaggio molto popolare, &egrave; stato per anni il fautore di web applications di
+								tutto rispetto.<br>
+								La tecnologia HTML5 e i browser generali stanno acquisendo spazio relegando il Java web come linguaggio di
+								nicchia. Anche se tutt'oggi &egrave; un valido strumento ed &egrave; buona cosa ricordare che i moderni
+								browser si stanno allontanando.
+							</p>
+						</div>
+						<div>
+							<p><h3><a name="SicurezzaJava">Impatto di Java sulla sicurezza</a></h3></p>
+							<p>
+								Le vecchie versioni di Java sono state oggetto di accusse poich&eacute; non era possibile configurare un proxy
+								SOCKS4/5 costrigendo a disabilitarlo del tutto. <bR>
+								Sebbene questa soluzione sia consigliata, &egrave; giusto dare merito agli svillupatori. <br>
+								Ci&ograve; nonostante &egrave; consigliabile disabilitare il client Java in quanto potrebbe
+								causare un DNS Leak.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="ControlloJava">Controllo su Java</a></h3></p>
+							<p >
+								Il client Java pu&ograve; essere disabilitato allo stesso modo e con gli stessi strumenti di JavaScript.
+								Possiamo comunque usare Orchid (browser basato su Tor Browser) disponibile pure per android.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="Activex">Activex</a></h3></p>
+							<p >
+								Per Activex si intende un'estensione Microsoft. Esso permette un controllo completo sulla macchina in cui gira,
+								consentendo di compromettere l'intero sistema dell'utente
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="SicurezzaActivex">Impatto di Activex sulla sicurezza</a></h3></p>
+							<p >
+								Come gi&agrave; detto Activex &egrave; estremamnete pericoloso. A prescindere da anonimato o meno,
+								una Activex &egrave; in grado di insediarsi in un dispositivo ed infettarlo con malware e trojan di ogni
+								genere.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="WebRTC">WebRTC</a></h3></p>
+							<p class="paragrafo">
+								WebRTC &egrave; una tecnologia novella nata nel 2011, essa consente la videochiamata tramite HTML5 e JS.
+								Da una ricerca condotta da <a href="http://torrentfreak.com" target="_blank">TorrentFreak </a> si &egrave;
+								scoperto che un sito grazie ad protocollo riesce a rivellare il tuo IP pubblico e quello locale!!
+								Questa vulnerabilit&agrave; &egrave; sfruttata da pochi portali per fortuna. Prova a collegarti alla tua VPN e
+								visita questo sito <a href="https://diafygi.github.io">indirizzo test </a> se mostrano il vero IP
+								allora sei vulnerabile. <br>
+								Questa vulnerabilit&egrave; pu&ograve; essere approfondita nella github a questo indirizzo
+								<a href="">https://github.com </a>,corredato di proof-of-concept e spiegazione sulla tecnica dell'attacco.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="ControlloWebRTC">Controllo su WebRTC</a></h3></p>
+							<p class="paragrafo">
+								WebRTC non &egrave; che faccia impazzire. Sarebbe meglio disabiltarlo utillizando le seguenti estensioni:
+							</p>
+							<ul>
+								<li><b>WebRTCNetworkLimiter</b> per Chrome</li>
+								<li><b>ScriptSafe</b> per Opera</li>
+								<li><b>DisableWebRTCAddon</b> per Firefox</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<h1><a name="Fingerprinting">Fingerprinting del browser</a></h1>
+						<p class="paragrafo">
+							Col termine fingerprinting (imprinta digitale) definiamo quel valore unico che il browser assume dal momento
+							in cui tutte le sue informazioni sommate portano ad un solo unico risultato.
+						</p>
+						<div>
+							<p class="console"><h3><a name="DefinireIlFingerprintg">Definire il fingerprintg del browser</a></h3></p>
+							<p>
+								Partiamo col dire che il fingerprinting &egrave; una tecnica molto laboriosa e viene effettuata solo tramite
+								appossiti software. <br>
+								Quando navighiamo il browser lascia un canale "aperto" che legge le nostre informazioni
+							</p>
+
+							<p>Queste sono:</p>
+							<ul>
+								<li>Risoluzione, profondita colori.</li>
+								<li>Plugin attivi e le versioni di ognugno.</li>
+								<li>Ora corrente e TimeZone.</li>
+								<li>Fingerprint del WebGL.</li>
+								<li>Lista dei font presenti nell'O.S.</li>
+								<li>Lingua corrente.</li>
+								<li>O.S e versione.</li>
+								<li>User agent.</li>
+								<li>Supporti esterno come Touchpad.</li>
+								<li>Utillizo di ADblock.</li>
+								<li>E tutto quello di cui abbiamo gi&agrave; parlato.</li>
+							</ul>
+							<p>
+								Si possono verificare le informazioni nel web eseguendo un test sul sito
+								<a href="https://panopticlick.eff.org">Panopticlick </a>
+							</p>
+						</div>
+						<div>
+							<p class = "console"><h3><a name="DifendersiDalFingerprinting">Difendersi dal fingerprinting del browser</a></h3></p>
+							<p>
+								Prendendo alla lettera tutto ci&ograve; che abbiamo detto, a questo punto il nostro browser dovrebbe
+								essere molto sicuro, ma si pu&ograve; fare anche di pi&ugrave;.<br>
+								Il trucco sta nel mischiare le carte<br>
+								Esistono addon che vengono incontro queste sono alcuni:
+							</p>
+							<ul>
+								<li><b>FireGloves</b>, disponibile per Mozilla Firefox.</li>
+								<li><b>StopFingerprinting</b>, disponibile per Chrome.</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<h1><a name="DownloadFile">Download di file</a></h1>
+						<p class="paragrafo">
+							In questa categoria rientrano tutti i file che vengono scaricati ma che, una volta aperti rivelano
+							informazioni online.<br>
+							L'ideale sarebbe aprire i file in Virtual Machine.
+							I file scaricati possono avere uno script o un codice eseguibile che potrebbe essere in grado di
+							comunicare esternamente.
+						</p>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href="i2p.html"><span id = "sinistra"> I2P </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="pgp.html"><span id = "destra"> PGP </span></a>
+			</p>
+		</div>
+	</body>
+</html>

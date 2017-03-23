@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<title>Anonimato in rete - DNS</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="vpn.html"> <span id = "sinistra"> VPN </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="tor.html"> <span id = "destra"> TOR </span> </a>
+			</p>
+		</div>
+			<div id="indice">
+				<p class="menu1"><a href="#DNS">DNS</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#Comedifendersi">Come difendersi</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#Windows">Windows</a></p></li>
+						<li><p class="menu3"><a href="#linux">Linux;</a></p></li>
+						<li><p class="menu3"><a href="#MacOs">MacOs/Osx</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#Killswitch">Kill Switch</a></p></li>
+					<li><p class="menu2"><a href="#ClearnetEDeepWeb">Clearnet e Deep Web</a></p></li>
+				</ul>
+			</div>
+
+		<div id="contenuto">
+			<h1><a name="DNS">DNS Leak</a></h1>
+			<p class = "paragrafo">
+				DNS(Domain Name System) sono dei servizi che si occupano di effettuare la traduzione del dominio.<br>
+				E possibile, in certe situazioni che in rete anonima, l'O.S contiunui ad analizzare i DNS di default del proprio ISP.<br>
+				Pu&ograve; succedere che anche cambiando i propri DNS vengono comunque letti dal proprio ISP poich&eacute;
+				alcuni sfruttano i proxy DNS trasparenti.
+			</p>
+
+			<div>
+				<h3><a name="Comedifendersi">Come difendersi</a></h3>
+				<p>
+					Per difenderti dal DNS Leak del tuo ISP devi fare in modo che utillizi DNS pubblici o della VPN.<br>
+					La soluzione migliore restano i DNS pubblici poich&eacute; garantiscono privacy, anonimato e richieste pi&ugrave; veloci.
+					Queste sono le piu utillizate:
+				</p>
+
+				<ul>
+					<li>Google DNS server primario 8.8.8.8 server secondario 8.8.4.4</li>
+					<li>Open DNS server primario 208..67.220.123 server secondario 208.67.220.123</li>
+					<li>Comodo DNS server primario 8.26.56.26 server secondario 8.20.247.20</li>
+				</ul>
+
+				<p>Ricordati di fare queste due cose:</p>
+				<ol>
+					<li>Modifica i DNS del router</li>
+					<li>Modifica i DNS del tuo O.S.</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>Fix post-cambio DNS.</h3>
+					<h3><a name="Windows">Windows</a></h3>
+					<p class = "console">
+						$ ipconfig/flushdns---->Pulizia del dns <br><br>
+						$ net stop dns cache---->ripulire cache in automatico <br> <br>
+						$ net start dns cache--->ripulire cache in auto <br>
+					</p>
+					<h3><a name="Linux">Linux</a></h3>
+					<p class = "console">
+						$ sudo apt-get install nscd<br><br>
+						$ sudo etc/init.d/nscd restart<br>
+					</p>
+				<h3><a name="MacOs">MacOs/Osx</a></h3>
+				<p class = "console">
+					$ sudo dscacheutil-flushcache<br><br>
+					$ sudo killal-HUP mDNSResponder
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="Killswitch">Kill switch(protezione alla caduta di connessione)</a></h2>
+				<p class = "paragrafo">
+					Le Kill Switch &egrave; una funzione vitale che effetua un taglio alla connessione quallora la VPN smettesse
+					di funzionare.
+				</p>
+			</div>
+
+			<div>
+				<h1><a name="ClearnetEDeepWeb">Clearnet e Deep Web</a></h1>
+				<p>
+					Fino ad ora abbiamo parlato di come navigare anonimi dentro la Clearnet.
+					Nel corso degli anni si &egrave; avuta l'esigenza di navigare in una rete che non fosse scansionabile dai motori di
+					ricerca comuni questa si chiama Deep Web.<br>
+					Molti collegano il Deep Web come la parte malvagia di internet, quando in realta quella parte di internet e chiamata Darknet.
+				</p>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p class="console">
+				<a href="vpn.html"> <span id = "sinistra"> VPN </span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="tor.html"> <span id = "destra"> TOR </span> </a>
+			</p>
+		</div>
+	</body>
+</html>

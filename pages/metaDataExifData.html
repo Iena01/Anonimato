@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<title>Anonimato in rete - METADATA e EXIF DATA </title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href="coldBootExtraction.html"> <span id = "sinistra"> Cold Boot RAM Extraction</span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="sensori.html"> <span id = "destra">Sensori Fotocamera</span> </a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1"><a href="#Metadata">Metadata e Exif Data</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#Visualizzare">Come visualizzare gli EXIF Data</a></p></li>
+					<li><p class="menu2"><a href="#MAT">MAT:metadata anonymisation toolkit</a></p></li>
+					<li><p class="menu2"><a href="#Software">SOFTWARE ALTERNATIVI PER I METADATA</a></p></li>
+					<li><p class="menu2"><a href="#Siti">Siti per il test degli EXIF Data</a></p></li>
+					<li><p class="menu2"><a href="#ModificareExif">Come modificare gli exif data</a></p></li>
+				</ul>
+			</div>
+
+			<div id="contenuto">
+				<div>
+					<h1><a name="Metadata">METADATA e EXIF DATA<a/></h1>
+					<p class = "paragrafo">
+						Nel campo dell&rsquo; informatica i metadati sono elementi presenti all&rsquo; interno dei file,
+						normalmente non visibili agli occhi dell&rsquo; utente finale.I metadati possono dire
+						molto sulla tua identit&agrave; e sono rintracciabili in diversi formati:
+						fotografici, documenti, video etc...<br>
+						Una delle risorse che ha reso grande l&rsquo; informatica &egrave; indubbiamente quella delle
+						immagini. Oggi siamo abituati a diversi formati (JPG, WAV, TIFF e via dicendo)
+						ognuno dei quali ha le sue peculiarit&agrave; ed &egrave; quindi adatto a diverse situazioni.<br>
+						Gli EXIF Data sono dei metadati presenti nei formati media che rivelano
+						informazioni aggiuntive davvero interessanti: &egrave; possibile risalire al codice univoco
+						del dispositivo che ha scattato l&rsquo; immagine marca e modello, orario, risoluzione e se
+						presente persino le coordinate GPS.
+					</p>
+				</div>
+				<div>
+					<h2><a name="Visualizzare">Come visualizzare gli EXIF Data</a></h2>
+					<p class = "paragrafo">
+						Di seguito mostreremo alcuni programmi in grado di permetterci la lettura dei
+						metadati (in particolar modo degli EXIF Data) all’interno dei file </p>
+				</div>
+
+				<div>
+					<h4><a name="MAT">MAT:metadata anonymisation toolkit</a></h4>
+					<p class_= "paragrafo">
+						Nel panorama informatico il programma in grado ripulire i Metadati da qualunque
+						file &egrave; <a href="https://mat.boum.org/">MAT: metadata anonymisation toolkit</a><br>
+						MAT &egrave; in grado di gestire diversi formati ( <a href="https://mat.boum.org/">qui</a>una lista) ed
+						&egrave; disponibile nelle versioni CLI e pi&ugrave; comunemente in versione GUI.<br>
+						Tale programma permette di inserire in una lista uno o pi&ugrave; file,q uindi successivamente
+						eseguie un fingerprinting dei metadati. Nell'esempio qui sitto vi faro vedere un'esempio su un file
+						.JPG:<br>
+						<img src="../images/Metadata.png"/><br>
+						In questo esempio &egrave; possibile vedere ben poco rispetto a quanto promesso.
+						Tuttavia analizzando bene le voci possiamo vedere che sotto Primary Platform
+						risiede il valore Microsoft Corporation, il che fa intendere che l’utente finale ha
+						utilizzato un Sistema Operativo Windows. Sotto la voce Device Model troviamo
+						invece sRGB, il che &egrave; strano visto che solitamente l&igrave; &egrave; presente il modello di una
+						fotocamera digitale(questo perche la foto &egrave; stata ritoccata).<br>
+						NB:&egrave; possibile che, testando immagini provenienti da Internet capiti che i
+						Metadati non vengano letti.Questo perch&egrave; i server per risparmiare banda comprimono i metadati.
+						Tuttavia considerate sempre che qualunque di questi servizi potrebbe
+						memorizzare i file originali da voi caricati.
+					</p>
+				</div>
+				<div>
+					<h3><a name="Software">Software alternativi per i metadata</a></h3>
+					<p class_= "paragrafo">Tuttavia sono presenti anche programmi alternativi
+						in grado di lavorare sui Metadati,di sotto elencati:
+					</p>
+					<ul>
+						<li>
+							<a href="http://www.exifsoftware.com/free-photo-viewer/">Free photo viewer</a> (Windows) <br>
+							-FPV &egrave; un programma che permette di estrarre informazioni per immagini in formato JPEG e RAW.
+						</li>
+						<li>
+							<a href="http://www.irfanview.com/">IrfanView</a>(Windows/OSX*/Linux**)<br>
+							-Disponibile sia a 32 che a 64 bit. Apre un&rsquo; infinit&agrave; di estensioni (anche MP3, EPS, PSD, SWF
+							e via dicendo)ed &egrave; espandibile mediante l uso di plugins.<br>
+							* &Egrave; possibile utilizzarlo in ambiente mac OS / OSX tramite <a href="http://winebottler.kronenberg.org/">WineBottler</a><br>
+						    ** &Egrave; possibile utilizzarlo in ambiente GNU/Linux tramite
+							<a href="https://www.winehq.org/">Wine</a><br>
+						</li>
+				 	</ul>
+				 </div>
+				 <div>
+				 	<h4><a name="Siti">Siti per il test degli EXIF Data</h4>
+				 	Per testare se il vostro file contiene degli EXIF Data potete visitare e utilizzare
+				 	uno dei seguenti siti:
+				 	<a href="http://www.viewexifdata.com">-Clicca qui.</a>
+				</div>
+				<div>
+				 	<h3><a name="ModificareExif">Come modificare gli exif data</h3>
+				 	<p class= "paragrafo">
+				 		Prima di procedere &egrave; doverose ricordare che rimuovere i Metadati non &egrave;
+						la soluzione finale;: i file su cui operiamo potrebbero essere manipolati tramite steganografia,
+						watermarks e altri tipi di metadati non standard. Alcuni programmi permettono solo un analisi
+						superficiale ad esempio non e possibile modificare valori nei formati PDF.<br>
+						&Egrave; possibile inoltre prevenire buona parte dei metadati presenti nei documenti
+						utilizzando semplici formati testo (i cosiddetti plain-text o pi&ugrave; comunemente
+						conosciuti come .txt).<br>
+						Se avete gi&agrave; provato alcuni dei programmi gi&agrave; citati avrete visto che alcuni di loro
+						permettono di modificare alcuni metadati ma a noi non basta! Abbiamo bisogno
+						di essere sicuri che il lavoro venga fatto maniacalmente,ecco perche vi mostro questi software:<br>
+					</p>
+					<ul>
+						<li>
+							<a href="http://www.sno.phy.queensu.ca/~phil/exiftool"/>ExifPilot</a> (Windows/OSX/Linux):
+						 	tool da linea di comando sviluppato in PERL. Permette l’apertura di qualunque tipo di Metadata.
+						</li>
+						<li>
+							<a href="http://www.geosetter.de/en"/>GeoSetter</a> (Windows):&Egrave; la miglior tool purtroppo solo per
+							windows. &Egrave; in grado di fare un sacco di cose:oltre ad aprire svariate estensioni digitali,
+							permette di cambiare coordinate geografiche, valori IPTC e molto altro. &Egrave; sicuramente uno dei
+							migliori tools per modificare gli EXIF Data in quanto permette di manipolarli in modo da sembrare
+							convincenti (anzich&egrave; insabbiarli).
+						</li>
+						<li>
+							<a href="https://exifeditor.com/">ExifEditorApp</a>(OSX):app disponibile per gli OS Apple, permette di
+							modificare i metadata EXIF e IPTC.
+						</li>
+						<li>
+							<a href="https://www.relliksoftware.com/exifdatechanger/download">ExifDateChange</a>(Windows) tool esclusivamente per l’OS Microsoft,
+							comodo poich&egrave; in versione portatile.
+						</li>
+					</ul>
+					<p class= "paragrafo">
+						Ovviamente la lista non finisce qui, ce ne sono molti altri come:
+						<a href="http://www.digitalconfidence.com/downloads.html">Batch Purifier Lite</a>,
+						<a href="http://www.superutils.com/products/exifcleaner/">EXIFCleaner</a>,
+						<a href="http://www.photome.de">PhotoME</a> e molti altri.
+						N.B:Converti la tua immagine in formato .PNG poich&egrave; questo formato non ha il supporto
+						standard agli EXIF Data.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p class="console">
+				<a href="coldbootextraction.html"> <span id = "sinistra"> Cold Boot RAM Extraction</span> </a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href="sensori.html"> <span id = "destra">Sensori Fotocamera</span> </a>
+			</p>
+		</div>
+	</body>
+</html>

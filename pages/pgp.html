@@ -1,0 +1,517 @@
+<html>
+	<head>
+		<title>Anonimato in rete - PGP</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+				<a href = "infoWeb.html"> <span id = "sinistra" > Info WEB </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href = "dataShredding.html"> <span id = "destra" > Data Shredding </span></a>
+			</p>
+		</div>
+
+		<div>
+			<div id="indice">
+				<p class="menu1">Sicurezza dei dati</p>
+				<ul>
+					<li><p class="menu2"><a href="#Sicurezza">Sicurezza dei dati</a></p></li>
+					<li><p class="menu2"><a href="#Crittografia">Crittografia dei file</a></p></li>
+					<li><p class="menu2"><a href="#PGP">PGP</a></p></li>
+					<li><p class="menu2"><a href="#CrearePGP">Creare la propia chiave PGP</a></p></li>
+					<li><p class="menu2"><a href="#Publica-Privata">Comprendere chiave Pubblica/Privata</a></p></li>
+					<li><p class="menu2"><a href="#ImpEspRec">Importare, esportare e recuperare chiave PGP/GPG</a></p></li>
+					<li><p class="menu2"><a href="#PGP-GPG-CrittografiaMessaggio">PGP/GPG per crittografia di un messaggio</a></p></li>
+					<li><p class="menu2"><a href="#PGP-GPG-VerificaDati">PGP/GPG per la verifica dei dati</a></p></li>
+					<li><p class="menu2"><a href="#PGP-GPG-CrittografiaEmail">PGP/GPG per la crittografia di Email</a></p></li>
+					<li><p class="menu2"><a href="#ConservareChiavi">Dove conservare le chiavi PGP/GPG</a></p></li>
+				</ul>
+				<p class="menu1"><a href="#CrittografiaDisco">Crittografia del disco</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#TrueCrypt">TrueCrypt</a></p></li>
+					<li><p class="menu2"><a href="#VeraCrypt">VeraCrypt</a></p></li>
+					<li><p class="menu2"><a href="#ZuluCrypt">ZuluCrypt, LUKS e famiglia</a></p></li>
+				</ul>
+				<p class="menu1"><a href="#Steganografia">Steganografia</a></p>
+				<ul>
+					<li><p class="menu2"><a href="#SteganografiaLSB">Steganografia col metodo LSB</a></p></li>
+					<li><p class="menu2"><a href="#ToolLSB">Tool per la Steganografia LSB</a></p></li>
+					<ul>
+						<li><p class="menu3"><a href="#SilentEye">SilentEye</a></p></li>
+					</ul>
+					<li><p class="menu2"><a href="#SteganografiaCopertura">Steganografia con generazione di copertura</a></p></li>
+				</ul>
+			</div>
+			<div id="contenuto">
+				<div>
+					<div>
+						<h1><a name="Sicurezza">Sicurezza dei dati</a></h1>
+						<p>
+							Se nonostante utilizzassimo tutte le precauzioni dovesse succedere di essere accusati,
+							tutti gli apparecchi informatici per una ragione o per un'altra possono essere sequestrati.<br><br>
+							L' <b>INFORMATICA FORENSE</b> &egrave; la branca dell'informatica che studia metodi per trovare informazioni
+							di qualunque tipo all'interno di un dispositivo informatico.<br>
+							Questa pratica ha avuto molto successo poich&eacute; si possono recuperare una mole di file di ogni genere.
+						</p>
+					</div>
+					<div>
+						<h1><a name="Crittografia">Crittografia dei file</a></h1>
+						<p class="paragrafo">
+							Abbiamo paarlato di protocolli sicuri (SSL/TLS).
+							La crptazione pu&ograve; essere usata non solo alla conessione ma anche nei messaggi che noi scambiamo
+							con alri utenti.
+						</p>
+						<div>
+							<h3><a name="PGP">PGP, Pretty Good Privacy</a></h3></p>
+							<p class="paragrafo" >
+								Quando si parla di crittografia non si pu&ograve; fare a meno di PGP, esso &egrave; una strumento che cifra testi,
+								email, file e directory aumentando di gran lunga la propria sicurezza. <br>
+								Il suo funzionamento  il &egrave; seguente: l'utente cifra il messagio creando 2 chiavi:<br><br>
+								<font color="FF0000">La chiave pubblica</font> &egrave; quella che permette a chiunque di inviarti un messagio,<br>
+								<font color="FF0000">	La chiave privata</font> &egrave; invece l'unica in grado di sbloccare e quindi leggerlo.<br><br>
+								La communicazione tra oubblica/privata &egrave; anche conosciuta come Crittografia Asimmetrica(o Diffie ed Hellman)
+								mentre l'uso di una sola (PGP comunuqe la usa) si definisce Crittografia Simmetrica.
+							</p>
+						</div>
+						<div>
+							<p class="console"><h3><a name="GPG">GPG, GNU Privacy Guard</a></h3></p>
+							<p class="paragrafo">GNU Privacy Guard &egrave; un tool disponibile per Win, Osx, Linux e BSD.</p>
+							<p>GPG viene fornito, oltre che in versione CLI, anche sotto diverse vesti:</p>
+							<ul>
+								<li><b>GPGTOOLS</b>, suite di tool per Osx.</li>
+								<li><b>GPG4Win</b>, client di tool per Win.</li>
+								<li><b>GPG4usb</b>, una versione solo per USB(Win/Linux).</li>
+								<li>.... e molte altre!!!</li>
+							</ul>
+					<div>
+						<h3><a name="CrearePGP">Creare la propria chiave PGP</a></h3>
+						<p class="paragrafo">>
+							In questa parte della guida impareremo a creare le nostre chiavi pubbliche e private, cosi da ricevere e
+							leggere messagi cifrati.<br>
+							Presupponendo che stai utillizando TAILS &egrave; possibile usare la GUI di GPG cliccando sull'icona,
+							e quindi la voce "Manage keys". <br>
+							Clicchiamo ora su File---->New(CTRL+N) e clicchiamo su PGP Keys.<br><br>
+							Ora definiamo il nome (Full name) e indirizzo Email. Cliccando su Advanced Key possiamo usare
+							chiavi (RSA consigliata) con la quale sar&agrave; criptata (4096 &egrave; consigliata)
+							Quindi ora definiamo la passphrase e clicchiamo su Create.
+						</p>
+						<p>Se apriamo il terminale possiamo lanciare il seguente commando:</p>
+						<p class="console"><br/> $ gpg --gen -key</p>
+
+						<p class="paragrafo">
+							Ci verr&agrave; chiesto che tipo di chiave vogliamo scegliere, la lunghezza di essa ed un eventuale scadenza.<br>
+							Poi e-mail e nome, proprio come nella GUI.
+						</p>
+					</div>
+					<div>
+						<h3><a name="Publica-Privata">Comprendere chiave Pubblica/Privata</a></h3>
+						<p class="paragrafo">>Riassumendo</p>
+						<ul>
+							<li>La <font color="#FF0000"><b>chiave privata</b></font> (private key) deve rimanere segreta.</li>
+							<li>La <font color="#FF0000"><b>chiave pubblica</b></font> (pubblic key) pu&ograve; rimanere con il resto del mondo</li>
+						</ul>
+						<p class="paragrafo">
+							Tra esse esiste una relazione che vi spiegher&ograve; cosi:<br>
+						Una chiave pubblica pu&ograve; essere decriptata sola dalla relativa chiave privata</p>
+					</div>
+					<div>
+						<h3><a name="ImpEspRec">Importare, esportare e recuperare una chiave PGP/GPG</a></h3>
+						<p class="paragrafo">
+							Per poter esesere utilizzato con altre persone &egrave; neccesario Importare la chiave pubblica del destinatario.
+							In GUI &egrave; molto semplice basta fare click su File---->Import oppure CTRL+T<br>
+
+						Da terminale invece basta lanciare:</p>
+						<p class = "console" ><br/> $ gpg --import[nome del file]</p>
+
+						<p>
+							Per esportare una chiave, magari la nostra stessa chaive bisogna fare click sulla voce File---->Export
+							(sostituire ID con la UserID).
+						</p>
+						<p>Da terminale basta lanciare:</p>
+						<p class="console"><br/> $ gpg --export [ID]</p>
+
+						<p class="paragrafo">&Egrave; possibile anche revocare una chiave privata nel caso persa o nei peggiori dei casi violata.
+							Questa voce (e anche le prossime) &egrave; disponibile in "Dettagli" di ogni chiave.
+						</p>
+						<p>Da terminale basta lanciare</p>
+						<p class="console" ><br/> $ gpg --output revoke.key --gen-key[ID]</p>
+
+						<p>Importiamo il certificato di revoca dal terminale:</p>
+						<p class="console"><br/> $ gpg --import revoke.key</p>
+
+						<p>Se abbiamo sincronizzato la chiave con i keyserver bisogna resincrinizzare il tutto:</p>
+						<p class = "console" ><br/> $ gpg --send-keys -keyserver hkp://subkeys.pgp.net[ID]</p>
+
+						<p>In fine aggiorniamo il nostro portachiavi</p>
+						<p class="console" ><br/> $ gpg --refresh-keys --keyserver hkp://subkeys.pgp.net</p>
+
+						<p>Per elimininazione di una chiave </p>
+						<p class="console" ><br/> $ gpg --delete-secret-and-pubblic-key</p>
+
+						<p>E probabile aver bisogno di una lista di tutte le nostre chiavi</p>
+						<p class="console" ><br/> $ gpg --list-keys</p>
+					</div>
+					<div>
+						<h3><a name="PGP-GPG-CrittografiaMessaggio">PGP/GPG per crittografia di un messagio</a></h3>
+						<p class="paragrafo">Nel caso avessimo bisogno di inviare un testo cifrato potremmo utillizare il seguente commando:</p>
+						<p class="console" ><br/> $ gpg --encrypt --recipient [destinatario] message.txt</p>
+						<p class="paragrafo">
+							In questo esempio message.txt sar&agrave; un file in formato .txt, mentre se volessimo cifrare il contenuto
+							.txt, verr&agrave; generato il file .txt.gpg- Questo potr&agrave; essere inviato come allegato ma se non
+							ci &egrave; permesso.<br>
+							Dovremmo generare un output con codifica ASCII, usando quindi il parametro --armor:
+						</p>
+						<p class="console" ><br/> $ gpg --armor --ebcrypt --recipient[destinatario] [file]</p>
+
+						<p class="paragrafo">
+							Il file generato sar&agrave; message.txt.asc, contenente il valore ASCII.<br>
+							Ora procediamo a decifrare il contenuto, il parametro sar&agrave; --decrypt:
+						</p></i>
+						<p class="console" ><br/> $ gpg --output output.txt --decrypt message.txt</p>
+						<p class="paragrafo">
+							Dove output sar&agrave; il messagio in chiaro e message.txt il testo cifrato.
+							Se presente GPG, chieder&agrave; la passphrase.
+						</p>
+						<p class="console" ><br/> $ gpg --clearsign --armor --encrypt --recipient [destinatario] [file]</p>
+						<p class="paragrafo"> Analoglamente alla cifratura, &egrave; possibile verificare la firma</p>
+						<p class="console" ><br/> $ gpg --verify [file]</p>
+					</div>
+					<div>
+						<h3><a name="PGP-GPG-VerificaDati">PGP/GPG per la verifica dei dati</a></h3>
+						<p class="paragrafo">OpenPGP permette non solo di cifrare ma di firmarli.<br>
+							Cosa serve<br>
+
+							Nel caso che tu stia parlando con un tuo amico e questo viene attacato/violato, noi non sapremmo se &egrave; realemente lui
+							scriverci quelle cose o meno. L'essere a conoscenza della nostra chiave pubblica non ci assicura che sia lui
+							il nostro interlocutore.<br>
+
+						Vediamo come comportarci: il comando per firmare con la prova della chiave si fa usando il paramentro -s(o --sign):</p>
+						<p class="console"><br/> $ gpg -s[file]</p>
+
+						<p class="paragrafo">
+							Di solito il comando comprime anche il file, per poterlo leggere si usa il seguente commando:
+						</p>
+						<p class="console"><br/> $ gpg --clearsign [file]</p>
+					</div>
+					<div>
+						<h3><a name="PGP-GPG-CrittografiaEmail">PGP/GPG per crittografia di email</a></h3>
+						<p class="paragrafo">
+							Crittografare un email non solo &egrave; utile per evitare che qualcuno monitori la tua connessione, ma anche che
+							qualcuno acceda alla tua posta e riesca a leggere il contenuto crittografato.<br>
+							&Egrave; inutile dire che se il nostro scopo &egrave; l'anonimato, di non usare i servizi di mailing con accesso sulla Clearnet(Gmail,Yahoo,Hotmail,Liber etcc..)
+							ma affidati a quelli che consentono l'accesso con VPN e nodi di TOR. <br><br>
+							una seconda considerazione (abbastanza ovvia) &egrave; non usare la stessa chiave usata per l'anonimato sulla propria mail,
+							o comunque un accesso almeno una volta senza le dovute precauzioni poiche pottrebbero risalire alla tua persona
+						</p>
+						<p class="paragrafo">
+							Ci sono diversi strumenti che ci consentono di farne uso. Di seguito ne troverete alcuni:<br>
+							<a href="https://addons.mozilla.org">Enigmail</a>: estensione per Thunderbird e SeaMonkey, necessita di GnuPG
+							gi&agrave; installato.<br>
+							<a href="https://www.mailvelope.com">Mailvelope</a>: estensione che consente di usare la criptazzione all'interno
+							delle webmail come Gmail, Yahoo, Outlook tramite Chrome e Firefox.<br>
+							<a href="https://www.thialfilhar.org">APG</a>: disponobile per Android, permette di integrare GPG facilmente nei
+							file e nelle mail.<br>
+							<a href="https://www.streak.com">SecureGmail</a>: estensione che permette di mettere al sicuro le mail dei servizi
+							GMail e di tutti i sistemi basati sulle GApps.<br>
+						</p>
+						<p class="paragrafo">
+							All'interno di Tails troveremo <a href="https://wiki.debian.org">Icedove</a>: creato da Mozilla Foundation e
+							ribrandizzato in salsa Debian, &egrave; un client di posta Thunderbird-based che integra gi&agrave;
+							Enigmail (per la cifratura e decifrattura) e TorBirdy, estensione per integrare facilmente il programma coi
+							nodi di Tor.
+						</p>
+						<p class="paragrafo">
+							Utlizando questa custom &egrave; facile fare le dovute prove: per ogni mail sar&agrave; possibile attivare
+							"Enigmail" semplicemente selezionandolo come per le funzioni di firma e cifratura PGP.
+						</p>
+					</div>
+					<div>
+						<h3><a name="ConservareChiavi">Dove conservare le chiavi PGP/GPG</a></h3>
+						<p class="paragrafo">
+							Sarebbe assurdo se dopo tutta sta paranoia lasciassimo le chiavi di decriptazione li in bella vista sul PC
+							non pensate?
+						</p>
+						<p class="paragrafo">
+							Ecco perch&eacute;, in caso di visite non gradite bisogna essere pronti a nascondere tutto (se non distruggere),
+							ecco che un sopporto removibile sarebbe bella cosa come ad esempio una USB se non addiritura una microSD (per la sua
+							grandezza sarebbe molto pi&ugrave; facile nasconderla).
+						</p>
+					</div>
+				</div>
+				<div>
+					<h1 ><a name="CrittografiaDisco">Crittografia del disco</a></h1>
+					<div>
+						<p class="paragrafo">
+							La crittogarfia del disco pu&ograve; essere applicata su l'intero disco o su una parte di essa,
+							questa funzione &egrave; disponibile per qualsiasi O.S:
+					 	</p>
+						<ul>
+							<li>Su Win la tecnologia &egrave; BitLocker</li>
+							<li>Su MacOS/OSX bisogna creare una partizione encrypted</li>
+							<li>Su GNU/Linux &egrave; solitamente chiamata Whole Disk Encryption o Full Disk Encryption</li>
+							</li>
+						</ul>
+						<p class="paragrafo">
+							Come per la crittografia a livello client, se perdi la tua chiave non ce modo per recuperarla ti rimane solo la
+							formattazione del disco e reinstallare O.S.<br><br>
+							Inoltre ogni O.S gestisce la criptazione del disco in modo diverso se Bitlocker e le partizioni possono essere
+							applicate facilmente su Linux e un po' pi&ugrave; confusionaria la cosa
+						</p>
+					</div>
+					<div>
+						<h3><a name="TrueCrypt">TrueCrypt</a></h3>
+						<p class="paragrafo">
+							TruCript ha scritto un pezzo di storia poich&eacute; ha semplificato la vita a molti dando la possibilt&agrave;
+							di cifrare il disco senza essere dei tecnici informatici<br>
+							Il progetto &egrave; stato abbandonato nel 2014 con la fine definitiva al supporto windows XP ma e ancora disponibile
+							per chi ne avesse il bisogno.
+						</p>
+						<p class="paragrafo">Per fortuna esistono una serie di fork che ne risolvono i limiti e problemi. TreuCript offre le seguenti:</p>
+						<ul>
+							<li>Permette di cifrare partizioni intere.</li>
+							<li>Permette di creare due partioni: una criptata e l'altra no.</li>
+							<li>Supporta l'accelerazione hardware offerta dall ultime CPU</li>
+							<li>Supporta tre algoritmi: AES, Serpent e TwoFish. &Egrave; possibile anche intrecciarli tra di loro.</li>
+						</ul>
+						<p class="paragrafo">Prima di procedere alcune raccomandazioni e controindicazioni generali, non valgono sempre ma &egrave; giusta dargli voce:</p>
+						<ul>
+							<li>Mai defremmentare e indicizzare i volumi criptati, poche potrebbe lasciare tracce nei log di sistema.</li>
+							<li>Non usare filesiystem journaled, preferisci filesystem che non lo prevedono(FAT32,exFAT o ext2).</li>
+							<li>Usa sempre la formattazione completa ma quella veloce</li>
+							<li>
+								Quando apri i file ricorda che verrano immagazinati in RAM e cartelle temp, procedi ad eliminarli quando hai
+								finito il tutto
+							</li>
+							<li>
+								In ogni caso, usa le giuste precauzioni per garantire sicurezza al dispositivo (sistema aggiornato,
+								internet scollegato).
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3><a name="Veracrypt">Veracrypt</a></h3>
+						<p class="paragrafo">A prendere le redini di questo programma troviamo senza dubbio
+							<a href="https://veracrypt.codeplex.com">VeraCrypt</a>, disponibile per tutti i maggiori O.S e
+							retrocompatibile con TrueCrypt. Il programma si presenta in maniera user-friendly e pertanto molto facile.
+						</p>
+						<p class="paragrafo">Ecco quali saranno i passaggi per creare una partizione o un contenitore</p>
+						<ol>
+							<li>
+								Per creare il nostro contenitore clicchiamo su Create Volume, quindi decidere se creare un contenitore o
+								cifrare una partizione.
+							</li>
+							<li>
+								La seconda facciata ci mostrer&agrave; un bivio: cifratura standard o hidden? <br>
+								Nel primo caso se non avremo la avremo la passphrase e non potremmo accedere, nella seconda si potrà usare
+								una seconda passphrase in sostituzione alla prima, cosi da poter decifrare la partizione a cui volete accedere
+								con le passphrase scelte.
+							</li>
+							<li>
+								(Opzione)Se si &egrave; scelto il contenitore e non la partizione specificare il volume del contenitore.
+							</li>
+							<li>
+								A questo punto &egrave; il momento di scegliere la passphrase se avete scelto hidden dovrete compilarlo due
+								volte la prima sar&agrave; quella "fasulla"
+							</li>
+							<li>(Opazionale) in fase di creazione ci viene chiesto se abilitare il PIM: che non &egrave; nient'altro un moltiplicatore
+								di possibilit&agrave; ad esempio se noi impostassimo un valore da 1 a 485 questo vul dire che ci sono 485
+								possibilità di trovare la password. In ogni caso potrebbe essere una cosa aggiuntiva, considerando che
+								una password di 20 carrateri cifrata in AES a 512bit si riuscirebbe a violarla in neanche 5 vite tanto per
+								dire...
+							</li>
+							<li>
+								(Opzionale)&egrave; possibile anche utilizzare un keyfile, in cui verr&agrave; generata una password.
+								Tale opzione potrebbe risultare pi&ugrave; sicura poich&eacute; creerebbe una password con caratteri a caso difendodoci
+								da keylogging.<br>
+								Il problema &egrave; che se qualcuno scopre il keyfile puo sbloccare l'intero volume, cosi come
+								senza keyfile non potremmo sbloccare il volume.
+							</li>
+							<li>
+								Diciamo ora al programma se vogliamo lavorare con file piu o meno grandi di 4GB.
+							</li>
+							<li>
+								A questo punto sara necessario scegliere il tipo di partizione.
+							</li>
+							<li>
+								Decidiamo se vogliamo abilitare l'opzione di supporto Cross Platform, esso limita i rischi del volume.
+							</li>
+							<li>
+								Se non ci &egrave; stata gi&agrave; mostrata vedremmo una barra di caricamento ad ogni movimento del mouse
+								(pi&ugrave; movimenti far&agrave; il mouse pi&ugrave; sar&agrave; complessa la chiave di cifratura).
+							</li>
+						</ol>
+						<p class="paragrafo">Il volume ora e creato</p>
+						<p>Procederemo ora al montaggio dei drive o dei file, in base a ci&ograve; che avete scelto</p>
+						<ol>
+							<li>Selezioniamo uno slot vuoto</li>
+							<li>Selezioniamo Select File o Select Device in base alle esigenze</li>
+							<li>Clicchiamo su Mount</li>
+							<li>Digitiamo la passphrase o carichiamo il keyfile</li>
+							<li>Il nostro contenitore verr&agrave; cosi sbloccato e si aprir&agrave; la partizione</li>
+						</ol>
+					</div>
+					<div>
+						<h3><a name="Zulucrypt">Zulucrypt</a>, LUKS e famiglia</h3>
+						<p class="paragrafo">
+							Nel mondo GNU/Linux spopola un tool chiamato <a href="https://mhogomchungu.github.io">Zulucrypt</a>.
+							Il suo punto di forza non &egrave; solo quello di essere compatibile con gli altri tool gi&agrave; citati ma anche con LUKS,
+							un metodo di cifratura appartenente alla famiglia Linux.<br><br>
+							LUKS &egrave; visto come uno standard nell'ambiente del pinguino, quindi &egrave; giusto sapere che esiste ed eventualmente come
+							interagirvi: nell'ambiente Windows esiste un tool <a href="https://it.wikipedia.org">FreeOTFE</a> mentre su
+							OSX esisteva OSXCrypt ma ormai sembra abbandonato.<br><br>
+
+							Tornando al mondo Linux &egrave; il modulo dm-crypt che si uccupa di offrire supporto a LUKS, questo modulo &egrave; presente
+							in quasi tutte le dsitribuzioni GNU/Linux. Tuttavia dm-crypt risulta abbastanza complesso per un utente alle
+							prime armi, mentre potremmo utillizare un tool chiamato cryptosetup esso sfrutta sempre il modulo dm-crypt.<br><br>
+						</p>
+					</div>
+				</div>
+				<div>
+					<h1><a name="Steganografia">Steganografia</a></h1>
+					<p class="paragrafo">
+						La steganografia &egrave; una tecnica utillizata per nascondere messagi all'interno dei contenitori che a una prima
+						occhiata possono sembrare innocui.
+					</p>
+					<div>
+						<h3><a name="SteganografiaLSB">Steganografia con metodo LSB</a></h3>
+						<p class="paragrafo">
+							Nell'informatica la steganografia pi&ugrave; comune risiede dentro una tecnica indentificata come
+							LSB (Least Significant Bit,ovvero bit meno significativo) questa si basa sul modificare una foto, un video,
+							un audio con un piccola porzione che contiene un'informazione.<br><br>
+							Immaginamo di prendere una foto da 1920x1080, questa immagine contiene 2 milioni di pixel,
+							chi penserebbe che tra uno di questo ci possa essere un'informazione? Bisognerebbe ingrandire pixel per pixel
+							o sapere la posizione. A questo si aggiunge che molti tools usano algoritmi per "rompere" un pixel.<br><br>
+							I programmi di questo tipo integrano una serie di cifrari per rendere impossibile anche ad uno scanning di
+							riuscire a decifrare il contenuto.<br><br>
+							Tuttavia questo non vuol dire che e immune agli attacchi:la steganal
+					</div>
+					<div>
+							<h3><a name="ToolLSB">Tool per la steganografia LSB</h3>
+						<p class="paragrafo">Il mondo della steganografia offre diversi tools, vediamone alcuni:</p>
+						<ul>
+							<li>
+								<a href="https://embeddedsw.net">OpenPuff</a> (Windows) &egrave; un gran bel tool che offre la steganografia su
+								formati audio/video/immagini/flash cifratura a 256bit e un sistema di algoritmo randonico.
+							</li>
+							<li>
+								<a href="https://www.rbcafe.com">Outguess</a> (OSX) permette di nascondere messagg in immagini JPG.
+							</li>
+							<li>
+								<a href="https://camouflage.unfiction.com">Camouflage</a> (Windows) permette la steganografia anche dentro
+								file Word.
+							</li>
+							<li>
+								<a href="https://www.outguess-rebirth.com">Outguess Rebirth</a> (Windows) permette la steganografia in
+								immagini. Pu&ograve; essere trasportato in memorie esterne e offre opzioni di cifrature.
+							</li>
+							<li>
+								<a href="https://steghide.sourceforge.net">Steghide</a> (Windows, Linux) &egrave; in grado di comprimere immagini
+								e video. Ha un algoritmo in grado di resistere a test basilari di statistica.
+							</li>
+							<li>
+								<a href="https://peticolas.net">MP3stego</a> (windows) permette di nascondere messaggi dentro file audio mp3.
+							</li>
+							<li>
+								<a href="https://quickcrypto.com">QuickStego</a> &egrave; un semplice software in grado di nascondere messaggi
+								dentro un'immagine con output solo .mbp.
+							</li>
+						</ul>
+						<p class="paragrafo">Alla lista aggiungiamo SilentEye, che impareremo a scoprire e ad utilizzare nelle prossime righe.</p>
+					</div>
+					<div>
+						<h3><a name="SilentEye">SilentEye</a></h3>
+						<p class="paragrafo">
+							<a href="https://silenteye.v1kings.io">SilentEye</a> &egrave; un software multipiattaforma e liberamente scaricabile
+							dal sito ufficiale.
+						</p>
+						<p class="paragrafo">
+							Il programma, come gli altri, &egrave; in grado di nascondere messagi o file dentro immagini JPEG
+							e MBP e all'interno di file audio WAFE. Offre anche chiavi di cifratura AES a 128 e 256 bit.<br><br>
+
+							Il programma offre un algoritmo di ricerca per capire quali pixel modificare affinch&eacute; risultino innocui.<br>
+							Gli svilluppatori hanno voluto spiegare il tutto usando una semplice foto:<br>
+							<img src="../images/aaa.png"/><br><br>
+
+							Come possiamo vedere viene estratto un campione 3x3 pixel da una porzione d'immagine: il campione viene tradotto
+							in codice binario e viene effettuata una modifica ai bit che contengono il codice del colore. <br>
+							Questa modifica consiste nel nell'inserire al suo posto il formato binario del codice ASCII che compone il
+							messaggio. Per fare in modo che i pixel subisocno evidenti modifiche (tipo coi caratteri speciali) verranno
+							distribuite in l'immagine.<br>
+							Come nell'esempio qui di sotto:<br>
+							<img src="../images/aab.png"/>
+						</p>
+					</div>
+					<div>
+						<h3>Come usare SilentEye</h3>
+						<p class="paragrafo">
+							Il programma si presenta con una GUI molto semplice ed intuitiva. Per prima cosa bisogna trascinare nella finestra
+							l'immagine da modificare:<br>
+							 <img src="../images/abc.png" height="300px" width="300px"/><br><br>
+
+							Nel caso in cui volessimo modificare l'immagine cliccheremo su Encode.
+						</p>
+						<p class="paragrafo">Come potremmo vedere &egrave; possibile modificare diversi parametri:</p>
+						<ul>
+							<li>Formato: (permette di scegliere il tipo di estensione .jpeg il consigliato poich&eacute; il piu utillizato).</li>
+							<li>Intervallo di luminanza: permettere di stabilire quanto "pesante" sia la modifica all'immagine (consiglio di lasciare 5).</li>
+							<li>Qualit&agrave; JPEG (solo per JPEG): definsce la qualit&agrave; finale dell'immagine.</li>
+							<li>Posizione Header: definsice dove inserire gli header per l'informazione steganografiche. In caso di dubbio lasciare buttom.</li>
+							<li>Passphrase: la password che definisce la posizione dei pixel.</li>
+							<li>Destinazione: il luogo dove salvare l'immagine.</li>
+							<li>Textbox: qui inseriremo il testo.</li>
+							<li>Upload Icon: qui caricheremo il nostro file.</li>
+							<li>Encryption: abilitandola potremmo scegliere il livello di cifratura con relativa passphrase e forza della chiave.</li>
+						</ul>
+						<p class="paragrafo">Vediamo ora il risultato:</p><br>
+						<img src="../images/aac.png"/>
+						<p class="paragrafo">A sinistra l'immagine originale, a destra quella cifrata. Impressionante vero?</p>
+						<p class="paragrafo">Per codificare l'immagine basta ritrascinare l'immagine e cliccare su Decode</p>
+					</div>
+					<div>
+						<h3><a name="SteganografiaCopertura">Steganografia con generazione di Copertura</a></h3>
+						<p class="paragrafo">Un secondo approccio anche se un po' meno popolare viene chiamato generazione di copertura:
+							questo si basa nell'inserire in un testo medio-lungo dell'informazioni.<br>
+							Se avete mai visto "il silenzio degli Innocenti" ricorderete di certo come Buffalo Bill riusciva a cominicare
+							Hannibal Lecter scrivendo su un quotidiano utillizando certe poszioni delle lettere per nacondere il tutto.
+							<br><br>
+
+							Per questi servizi uno dei migliori &egrave; di certo <a href="https://spammimic.com">spammimic.com</a> questo sito
+							web permette di utillizre particolari algoritmi di cifratura, vediamo alcuni:
+						</p>
+						<ul>
+							<li>Steganografia pura con metodo spam</li>
+						</ul>
+						<p class="paragrafo">
+							Tramite questo metodo &egrave; possibile nascondere un messagio all'interno di un falso messaggio di spam. <br>
+							Questo testo per chiunuqe ci tracciasse passerebbe come solito messaggio di spam. <br>
+							Questo metodo tuttavia &egrave; soggetto ad attacchi di bruteforce (soprattutto se spamimic usa sempre la stessa
+							posizione) per questo si pu&ograve; implementare una password per ridurre le probabilit&agrave;
+						</p>
+						<ul>
+							<li>Steganografia pura con metodo PGP</li>
+						</ul>
+						<p class="paragrafo">
+							Anche in questo caso verr&agrave; generato un messaggio fuorviante, sembrer&agrave; infatti che stiamo inviando
+							semplici messaggi cifrati<br><br>
+
+							Esiste poi il metodo fake russian (quasi inutile, a meno che non si utilizzi un messaggio gi&agrave; cifrato)
+							&egrave; il metodo degli spazi, che a diferenza del primo fa uso del numero di spazi per decidere la posizione
+							dei caratteri.
+						</p>
+						<p class="paragrafo">Tutto ci&ograve; ovviamente si pu&ograve; utilizare con PGP, per implementare sicurezza a messagi
+							inviati/ricevuti.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class="console">
+				<a href = "infoWeb.html"> <span id = "sinistra" > Info WEB </span></a> |
+				<a href = "../index.html"> <span id = "centro"> Torna all'indice </span> </a> |
+				<a href = "dataShredding.html"> <span id = "destra" > Data Shredding </span></a>
+			</p>
+		</div>
+	</body>
+</html>

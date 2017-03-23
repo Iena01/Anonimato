@@ -1,0 +1,263 @@
+<html>
+	<head>
+		<title>Anonimato in rete - Ambienti Virtualizzati</title>
+		<link rel="stylesheet" type="text/css" href="../css/stile.css">
+		<link rel="stylesheet" type="text/css" href="../css/indice.css">
+	</head>
+	<body>
+		<div id="footer">
+			<p class="console">
+    				<a href="pagareonline.html"><span id = "sinistra"> Vulnerabilit&agrave; </span></a> |
+    				<a href = "../index.html"> <span id = "centro">Torna all'indice </span> </a> |
+    				<a href="informatica.html"><span id = "destra"> Oltre l'informatica </span></a>
+          </p>
+        </div>
+
+				<div>
+					<div id="indice">
+						<p class="menu1"><a href="#Ambienti">Ambienti Virtualizzati</a></p>
+						<ul>
+							<li><p class="menu2"><a href="#Qubes">Qubes OS</a></p></li>
+						<ul>
+							<li><p class="menu3"><a href="#Logica">Logica di Virtualizzazione</a></p></li>
+							<li><p class="menu3"><a href="#Dominio">Dominio Network e Dominio Storage</a></p></li>
+						</ul>
+							<li><p class="menu2"><a href="#Perche">Perch&egrave; usare Qubes e non Tails</a></p></li>
+							<li><p class="menu2"><a href="#P+">Qubes OS + Tais</a></p></li>
+							<li><p class="menu2"><a href="#Whonix">Qubes OS + Whonix</a></p></li>
+							<li><p class="menu2"><a href="#Subgraph">Subgraph OS</a></p></li>
+							<li><p class="menu2"><a href="#Pochi">Herdenend come pochi</a></p></li>
+							<li><p class="menu2"><a href="#Network">Network e anonimato</a></p></li>
+						</ul>
+				</div>
+
+				<div id="contenuto">
+					<h1><a name="Ambienti">Ambienti Virtualizzati</a></h1>
+					<p class = "paragrafo">
+						All'inizio di questo corso abbiamo messo in guardia l'utente sulla reale sicurezza
+						che una Virtual Machine pu&ograve; fornire: questa problematica &egrave; ancora vera ma
+						credo sia arrivato il momento anche di fare analisi più approfondite.<br><br>
+
+						La virtualizzazione non e un male quando si parla di sicurezza informatica anzi pu&ograve;
+						garantire una certa "tenuta stagna" ad smpio se stai studiando i comportamenti di un malware,&egrave;
+						fondamentale la virtualizzazione.<br><br>
+
+						Con il discorso delle vulnerabilità abbiamo evidenziato come l'anonimato di una
+						persona pu&ograve; essere compromessa violando il sistema che sta utilizzando: cos' &egrave;
+						possibile fare allora?
+					</p>
+				</div>
+
+				<div>
+					<h2><a name="Qubes">Qubes OS</a></h2>
+					<p class = "paragrafo">
+						Il progetto Qubes OS nasce il 3 settembre 2012 ad opera di una ricercatrice informatica,
+						Joanna Rutkowska. Questo particolare OS introduce un nuovo approccio di sicurezza definito
+						di "isolamento". In sostanza si pressume che ogni programma puo avere bug e quindi se sfruttato
+						pu&ograve; causare danni al sistema.<br><br>
+						Qubes OS + Whonix di creare stanze di lavoro ben divisi tra di loro cosi da
+						permettere interazioni tra i diversi tool dello stesso dominio (chiamati Qubes).<br><br>
+
+						Per spiegare meglio il concetto utilizzeremo un'infografica dello sviluppatore:<br>
+						<img src="../images/qubes.png"/><br>
+						Nell'esempio qui mostrato, sono presenti tre ambienti virtualizzati: Work,
+						Shopping e Random.<br>Qubes OS + Whonix
+						In tutti e tre gli ambienti &egrave; presente un processo di Firefox: questo viene
+						considerato come un processo a se stante, cio&egrave; se noi fossimo loggati in
+						un qualsiasi sito di e-Commerce (Amazon,Ebay etc...) non lo saremmo pero in Work,
+						e in Random garantendoci un'isolamento totale.<br><br>
+
+						Molti di voi staranno pensando era neccessario creare un O.S non bastava una Virtual Machine?<br>
+						Certo per&ograve; bisogna far partire tre O.S differenti e qusto avrebbe consumato partecchie
+						risorse hardware.
+					</p>
+				</div>
+
+				<div>
+				<h4><a name="Logica">Logica di Virtualizzazione</a></h4>
+				<p class = "paragrafo">
+					L'hypervisor integrato in Qubes permette di creare infinite qubes utilizzando un
+					unico Sistema Operativo e pu&ograve; supportare nativamente Fedora, Debian, Windows
+					e Whonix; inoltre, gli ambienti di lavoro condividono lo stesso ambiente grafico,
+					eliminando all'user lo stressante switch tra i vari Sistemi Operativi.<br><br>
+					Avrai inoltre notato che i tre ambienti di lavoro sono divisi per colore. Ora guarda
+					attentamente la prossima screen:<br>
+					<img src="../images/whois.png"/><br>
+					Come puoi notare ogni laoro a un suo colore e inoltre solo quella a cui stai lavorando
+					e illuminata le altre sono pi&ugrave; scure.
+				</p>
+			</div>
+
+			<div>
+				<h4><a name="Dominio">Dominio Network e Dominio Storage</a></h4>
+				<p class="paragrafo">
+					Come abbiamo avuto modo di vedere, il Network &egrave; l'ambiente pi&ugrave; pericoloso per
+					l'utente che vuole proteggere il proprio anonimato.<br>
+					Qubes OS offre al suo interno un sistema di virtualizzazione chiamato Network
+					Domain: in buona sostanza il concetto di VM viene applicato anche alla rete che
+					viene virtualizzata in un ambiente controllato da uno pseudo-user senza privilegi
+					di root e isolato dal resto del Sistema Operativo.<br>
+					Impratica &egrave; come se tutte le operazioni di networking venisse gestito da un altra
+					VM questo garantisce un livello di sicurezza senza confronti.<br>
+					Lo stesso concetto viene applicato anche alla memorizzazione dati, qui definita
+					Storage Domain: tutti gli ambienti di lavoro devono ovviamente avere il loro
+					spazio su disco per memorizzare software, dati e via dicendo.<br>
+					Tutte le pseudo-partizioni condividono lo stesso fyle-system in modalit&agrave; read-
+					mode only.<br>
+				</p>
+			</div>
+
+			<div>
+				<h2><a name="Perche">Perch&egrave; usare Qubes e non Tails</a></h2>
+				<p class="paragrafo">
+					Partiamo sempre dal concetto che ogni soluzione &egrave; soggettiva: chi
+					preferisce Tails probabilmente cerca una situazione totalmente estranea al suo
+					modo di interpretare l'informatica.<br>
+					Tails OS, cos&igrave; come molte altre distribuzioni Live, &egrave; pensata per operazioni mordi
+					e fuggi che non sempre si sposano adeguatamente con il tipo di attivit&agrave; che si fa.
+					Un utente con una certa esperienza nel campo di GNU/Linux vorrebbe avere la
+					sicurezza che Tails offre ma senza dover ogni volta l'obbligo di riavviare il tutto.<br>
+					Qubes OS riesce a fare questo, garantisce ambienti di lavoro isolati tra di loro e
+					nello stesso tempo offre la comodità di un Sistema Operativo standalone.<br>
+					E con questo fatte le vostre considerazione e scegliete quella che per voi e meglio.<br>
+					Tirando le somme entrambi i Sistemi Operativi sono importanti per i loro scopi:
+					<ul>
+						<li>Tails &egrave; usata per essere anonimi poich&egrave; cambia il Mac  Address della scheda
+							di rete e reindirizza tutto il traffico a Tor.</li>
+						<li>Qubes &egrave; pensata per l'uso di tutti i giorni.Il suo compito finale &egrave; di assicurare
+							l'utente una protezione da attacchi informatici di ogni tipo.</li>
+							</ul>
+								</p>
+							</div>
+
+							<div>
+								<h2><a name="P+">Qubes OS + Tais</a></h2>
+								<p class="paragrafo">
+									Tails &egrave; sconsigliato usarlo su VM anche gli svillupatori spiegano:
+									il pi&ugrave; importante tra questi &egrave; la persistenza o
+									meglio la reminiscenza dei dati dal Sistema Operativo che rimangono in
+									memoria all'interno del disco.<br>
+									Come abbiamo avuto modo di vedere Qubes usa un modo di paravirtualizazzione che
+									auto-distrugge tutti i dati in memoria, facilitando cos&igrave; le operazioni di bonifica del drive.
+									Qubes quindi e adatto alla paravisrtualizazzione diu Tails il procedimento per
+									l'applicazione &egrave; relativamente semplice. In questo modo &egrave; possibile
+									far uso della “potenza di fuoco” di Qubes OS assieme a Tails OS: come si dice in
+									questi casi, due piccioni con una fava!<br>
+								</p>
+							</div>
+
+							<div>
+								<h2><a name="Whonix">Qubes OS + Whonix</a></h2>
+								<p class="paragrafo">
+									L'utilizzo di Tails in Qubes ci ha permesso di comprendere la virtualizzazione di un
+									intero Sistema Operativo all'interno di un sistema paravirtualizzato Xen,ci&ograve;
+									tuttavia pu&ograve; essere considerato un limite.Questo &egrave; vero nel momento in cui si
+									vogliano utilizzare i tools in Qubes anzich&egrave; quelli virtualizzati in Tails.
+									&Egrave; necessario allora creare un nuovo livello che ci permetta di veicolare il traffico in un canale
+									di comunicazione sicuro e anonimo.<br><br>
+
+									Whonix &egrave; una distribuzione GNU/Linux basata su Debian e Tor e fa uso di due
+									VM, un gateway e una workstation.<br>
+								 Per capirne il suo funzionamento faremo uso di un'altra infografica dello sviluppatore:<br>
+									<img src="../images/whonix.png"/><br>
+									Come vediamo, la Workstation &egrave; un ambiente che ci permette di lavorare
+									all'interno di un'area isolata dal Gateway, una Virtual Machine che &egrave; gi&agrave; pensata
+									per il collegamento via Tor.<br><br>
+									Fatta questa premessa &egrave; doveroso ricordare che Whonix ha gli stessi limiti di
+									sicurezza che abbiamo affrontato nel capitolo “Tor”.<br><br>
+									Questa differenza si paga con l'assenza di alcune peculiarit&agrave; che rendono Tails
+									talvolta vantaggiosa come:
+									<ul>
+										<li>Mancanza del Mac Spoofing.</li>
+										<li>Mancanza di 'amnesia' del software, ovvero tutte le funzioni volte a eliminare
+												qualunque informazione nel computer.</li>
+										<li>Mancanza di flush dei metadati.</li>
+ 									  <li>Mancanza di una cifratura completa a livello di posta, causato dalla
+												retrocompatibilit&agrave; con il protocollo SMTP.</li>
+										<li>E tanto altro <a href="https://www.whonix.org/wiki/Warning">qui</a></li>
+											<ul>
+										</p>
+									</div>
+
+									<div>
+										<h2><a name="Subgraph">Subgraph OS</a></h2>
+										<p class="paragrafo">
+											Possiamo definire Subgraph OS come il nuovo sistema di sicurezza anche se per&ograve;
+											e solo in versione alfa maneggiatelo con cura e discrezione.<br><br>
+
+											Gli svillupatori dichiarono che Subgraph sia un O.S rivoluzionario pu&ograve;
+											essere installato su qualsiasi PC anche abbastanza datato.<br><br>
+											Di seguito mettero la foto per spiegarvi la struttura<br>
+											<img src="../images/subgraph.png"/><br>
+										</p>
+									</div>
+
+									<div>
+										<h3><a name="Pochi">Herdenend come pochi</a></h3>
+										<p class="paragrafo">
+											Subgraph OS viene distribuito di default con un kernel gi&agrave; compilato di
+											Grsecurity, una serie di patch che garantiscono un alto livello di sicurezza
+											all'intero sistema.
+											All'interno di Grsecurity troviamo PaX, un componente molto potente in grado
+											rilevare qualsiasi attacco come ad esempio buffer overflow,  grazie ad una
+											nuova tecnlogia riesce a randomizzare i banchi di memoria rendendo difficoltoso
+											recuperarli.<br><br>
+
+											Subgraph OS inoltre riprende il metodo di virtualizzazione: lo scopo e quello di
+											<b>Sandboxare</b> la applicazioni per fare in modo di isolarle tra di loro.<br>
+											Quindi nel caso un applicazione venisse exploitate questa non metterebbe a rischio
+											l'intero PC.Tutto ci&ograve; e garantito da OZ, un framework pensato solamente
+											per Subgraph OS. <br><br>
+
+											Subgraph supporta la criptazione del filesystem rendendolo persino obbligatoria.<br><br>+
+
+											La maggior parte dei tools di Subgraph sono ad alto livello cosi da non poter essere
+											vittima di attacchi di memoria. Inoltre molti tool sono stati eliminati e altri addiritura
+											riscritti da zero(ad esempio il client di posta).
+										</p>
+									</div>
+
+									<div>
+										<h3><a name="Network">Network e anonimato</a></h3>
+										<p class="paragrafo">
+											Sempre sulla falsa riga di Qubes, troviamo un dominio di networking: in questo
+											caso si chiama Subgraph Metaproxy affiancato da un Firewall Software.
+											Mentre il Firewall, consente solo alle applicazioni consentite di collegarsi
+											a un Metaproxy,quest'ultimo &egrave; configurato a smistare le connessione
+											su ogni relay TOR, dimunuendo cosi informazioni comuni sulla rete.Per essere pi&ugrave;
+											chiari se noi stessimo inviando una e-mail,comporteremo l'uso di due diversi
+											relay Tor.<br><br>
+
+										 Il firewall pu&ograve; essere configurato per accettare
+										 temporaneamente o perennemente l'accesso alla rete da parte di qualunque software,
+										 scardinando cosi la possibilt&agrave; che una backdoor si prenda possesso del nostro
+										 Sistema operativo, a patto che la backdoor non sia gia presente in qualche applicazione
+										 whitelistata.
+										 Il whitelisting di un'app avviene sia per nome dell'applicazione che per indirizzo
+										 di destinazione; nel caso in cui un'applicazione volesse collegarsi senza essere in
+										 whitelist, il Firewall semplicemente si occuperà di killare la connessione.<br><br>
+
+										 Come penso abbiate gia capito Subgraph fa uso delle rete Tor per comunicare con il
+										 mondo esterno,ad essere precisi, fa un uso esclusivo della rete Tor, tranne quando &egrave;
+										 necessaria una connessione diretta col portale(tipo per collegarti ad una Wi-Fi pubblica).<br><br>
+
+										 Subgraph OS inoltre fornisce al suo interno due software custom per la
+										 sicurezza nelle comunicazioni:
+									 </ul>
+									 <li><b>Icedove</b>, un client basato su Thunderbird, fornito di Enigmail (PGP) e TorBirdy
+										 		  (Anonimato via Tor)</li>
+									 <li><b>CoyIM</b>, un client XMPP riscritto completamente da zero per evitare exploiting a
+										 			livello di memoria e anch'esso pensato solo ed esclusivamente per la rete TOR.</li>
+												</p>
+											</div>
+										</div>
+									</div>
+									 <div id="footer">
+										<p class="console">
+											<a href="pagareonline.html"><span id = "sinistra"> Vulnerabilit&agrave; </span></a> |
+					    				<a href = "../index.html"> <span id = "centro">Torna all'indice </span> </a> |
+					    				<a href="informatica.html"><span id = "destra"> Oltre l'informatica </span></a>
+										</p>
+										</div>
+								</body>
+							</html>
